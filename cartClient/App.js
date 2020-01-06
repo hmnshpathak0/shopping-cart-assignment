@@ -1,16 +1,17 @@
 
   
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.scss';
 import {
   BrowserRouter,
   Switch, Route
 } from "react-router-dom";
-import Home from './pages/home/home';
 import Login from './pages/login/login';
-import Register from './pages/register/register';
-import Cart from './pages/myCart/mycart';
 import { connect } from 'react-redux';
+import Header from './core/templates/header/header';
+import Home from './pages/home/home';
+
 
 class App extends Component {
   constructor() {
@@ -20,23 +21,22 @@ class App extends Component {
 
   render() {
     return (
+       
       <BrowserRouter>
+       <div className='app'>
+      <Header/>
           <div id='app-container' className='app-container'>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/productDetails" component={ProductDetails} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/mycart" component={MyCart} />
               <Route component={Home} />
             </Switch>
           </div>
-          <Footer />
-    
+      </div>    
       </BrowserRouter>
+      
+      
     );
   }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('app'));

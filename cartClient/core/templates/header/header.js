@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import {Navbar,Nav} from  'react-bootstrap';
 import './header.scss';
+import CartButton from '../../theme/buttons/cartButton/cartButton'
+import DropDown from '../../theme/dropDown/dropdown';
 
 class Header extends React.Component{
     constructor(){
-        super()
+        super();
+        this.state={
+            toggle:false
+        }
+    }
+    //this method is called to toggle the menu Bar
+    toggleMenu=() => {
+       
+        this.setState({toggle : !this.state.toggle})
     }
     render(){
+        
         return(
-            <div className='header'>
-            <img alt='Sabka Bazaar' className='header_logo'/>
-<Navbar bg="light" expand="lg">
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="/home">Home</Nav.Link>
-      <Nav.Link href="/link">Link</Nav.Link>
-      
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>            </div>
+        <div className='header'>
+        <div  className='header_leftpan'>
+        <img className='header_logo' alt='sabka Bazaar'/>
+        <i  onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars fa-2x'></i>
+        <div class='header_menu'>
+        <li><a>Home</a></li>
+        <li><a>Products</a></li>
+        </div>
+        <DropDown toggle={this.state.toggle}/>
+        </div>
+        <div className='header_rightpan'>
+            <CartButton/>
+        </div>
+        </div>
         )
     }
 }

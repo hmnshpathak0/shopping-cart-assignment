@@ -30,9 +30,22 @@
     .fa{
         cursor:pointer;
         color: $color-pink-2;
+        outline:0;
     }
     .header_menu{
         display:none;
+        ul{
+            margin:auto;
+        }
+    }
+    .header_menu_item{
+        padding:0.8rem;
+        display:inline-block;
+        cursor:pointer;
+        &:hover,&:active{
+            border-bottom:1px solid $color-black-1;
+        }
+
     }
     @media only screen and (min-width:$screen-tablet) {
         .fa{
@@ -41,5 +54,25 @@
         .header_menu{
             display:block;
         }
-      }
+        .header_logo{
+            width:25%;
+        }
+        .header_leftpan{
+            flex:0.8;
+        }
+        .header_rightpan{
+            flex:0.2
+        }
+    }
+    @media only screen and (min-width:$screen-laptop) {
+        .header_logo{
+            width:15%;
+        }
+        .header_leftpan{
+            flex:0.9;
+        }
+        .header_rightpan{
+            flex:0.1
+        }
+    }
 }

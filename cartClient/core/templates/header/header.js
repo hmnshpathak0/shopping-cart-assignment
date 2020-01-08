@@ -22,7 +22,7 @@ class Header extends React.Component{
         <div  className='header_leftpan'>
         <img className='header_logo' alt='sabka Bazaar'/>
         <i  onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars fa-2x'></i>
-        <div class='header_menu'>
+        <div className='header_menu'>
         <li><a>Home</a></li>
         <li><a>Products</a></li>
         </div>

@@ -1,5 +1,8 @@
 .header_cartButton{
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     
     img{
         width:30%;

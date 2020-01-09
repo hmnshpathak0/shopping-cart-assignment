@@ -1,3 +1,4 @@
+@import '../style/theme.scss';
 .header_dropdown{
     position: absolute;
     will-change: transform;
@@ -31,7 +32,13 @@
     border: 0;
     }
 }
-.header_dropdown-show{
+.header_dropdown-display{
     display:block;
 }
+@media only screen and (min-width:$screen-tablet) {
+    .header_dropdown-display{
+        display:none;
+    }
+}
+
 

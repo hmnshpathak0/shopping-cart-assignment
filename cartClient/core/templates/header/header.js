@@ -18,8 +18,12 @@ class Header extends React.Component{
   
     //this method is called to toggle the menu Bar
     toggleMenu=() => {
-       
+       //setting the toggle value for dropdown menu
         this.setState({toggle : !this.state.toggle})
+        //setting the dropdown top position when menu is opened
+        console.log(this.headerElement.current.clientHeight)
+        if(!this.state.toggle && this.state.height!=this.headerElement.current.clientHeight)
+            this.setState({height:this.headerElement.current.clientHeight})
     }
     updateDimensions = () => {
         if(this.state.height!=this.headerElement.current.clientHeight)
@@ -27,8 +31,8 @@ class Header extends React.Component{
     }
     //Calling the componentDidMount life cycle
     componentDidMount(){
+        //adding event for resize responsiveness
         window.addEventListener('resize', this.updateDimensions);
-        this.setState({height:this.headerElement.current.clientHeight})
 
     }
     render(){

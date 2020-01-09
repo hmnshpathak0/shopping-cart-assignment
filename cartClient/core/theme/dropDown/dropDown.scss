@@ -3,7 +3,6 @@
     will-change: transform;
     top: 0;
     left: 0;
-    transform: translate3d(0px, 75%, 0px);
     z-index: 1000;
     display: none;
     float: left;
@@ -31,8 +30,8 @@
     background-color: transparent;
     border: 0;
     }
-    .header_dropdown--show{
-        display:block;
-    }
+}
+.header_dropdown-show{
+    display:block;
 }
 

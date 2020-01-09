@@ -13,7 +13,7 @@ class Header extends React.Component{
             height:0
         }
         this.headerElement = React.createRef();
-        links.slice(0,2).map(url => console.log(url.url))
+       
     }
   
     //this method is called to toggle the menu Bar
@@ -21,14 +21,15 @@ class Header extends React.Component{
        
         this.setState({toggle : !this.state.toggle})
     }
-    updateDimensions(){
-        console.log("height",this.headerElement)
-        this.setState({height:this.ref.current.clientHeight})
+    updateDimensions = () => {
+        if(this.state.height!=this.headerElement.current.clientHeight)
+            this.setState({height:this.headerElement.current.clientHeight})
     }
     //Calling the componentDidMount life cycle
     componentDidMount(){
-        
         window.addEventListener('resize', this.updateDimensions);
+        this.setState({height:this.headerElement.current.clientHeight})
+
     }
     render(){
         

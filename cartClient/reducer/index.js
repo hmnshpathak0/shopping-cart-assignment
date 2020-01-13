@@ -1,13 +1,9 @@
+//this file is the main reducer file for redux store
+
 import { combineReducers } from 'redux';
+import {updateData} from '../core/Actions/cartAction/reducer'
 
-//initail state
 
-const initialState = {};
-
-//function to update state  variables
-function updateData(state = initialState, action) {
-    return state
-}
 
 const reducer = combineReducers({ updateData });
 

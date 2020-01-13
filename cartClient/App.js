@@ -11,6 +11,8 @@ import Login from './pages/login/login';
 import { connect } from 'react-redux';
 import Header from './core/templates/header/header';
 import Home from './pages/home/home';
+import {Provider} from 'react-redux';
+import {store} from './store'
 
 
 class App extends Component {
@@ -39,4 +41,6 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render( <Provider store={store}>
+  <App />
+</Provider>, document.getElementById('app'));

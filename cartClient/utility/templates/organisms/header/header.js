@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './header.scss';
 import  {NavLink} from 'react-router-dom'
-import CartButton from '../../theme/buttons/cartButton/cartButton'
-import DropDown from '../../theme/dropDown/dropdown';
+import CartButton from '../../atoms/buttons/cartButton/cartButton'
+import DropDown from '../../atoms/dropDown/dropdown';
 import links from './links.json'
 
 class Header extends React.Component{

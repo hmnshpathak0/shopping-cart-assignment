@@ -1,7 +1,7 @@
 import React from 'react';
 import './DropDown.scss';
 import {NavLink} from 'react-router-dom';
-import links from  '../../templates/header/links.json'
+import links from  '../../organisms/header/links.json'
 
 function DropDown(props) {
   return (

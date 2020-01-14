@@ -4,6 +4,7 @@ const urlConfig = {
     serverUrl : 'http://localhost:5000/',
     cartApiUrl: 'addToCart',
     categoriesUrl: 'categories',
+    bannersUrl: 'banners',
 }
 
 //all configs related to response code
@@ -21,7 +22,8 @@ const errorConfig = {
 //Labels and texts
 
 const labelConfig = {
-    SabkaBazaar : 'SabkaBazaar'
+    SabkaBazaar : 'SabkaBazaar',
+    home : 'Home Page'
 }
 
 export {

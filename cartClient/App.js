@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Login from './pages/login/login';
 import { connect } from 'react-redux';
-import Header from './core/templates/header/header';
+import Header from './utility/templates/organisms/header/header';
 import Home from './pages/home/home';
 import {Provider} from 'react-redux';
 import {store} from './store'

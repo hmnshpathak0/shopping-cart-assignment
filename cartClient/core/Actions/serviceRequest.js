@@ -10,7 +10,6 @@ const config = {
         'Access-Control-Allow-Origin': urlConfig.clientUrl,
         'cross-origin': true,
         'Access-Control-Allow-Methods':'options,post',
-        'Access-Control-Allow-Headers' : 'Origin, Content-Type, Accept,Access-Control-Allow-Origin,cross-origin,Access-Control-Allow-Methods'
     }
 }
 
@@ -18,5 +17,13 @@ const getPostRequest = (url,data) => {
     return axios.post(urlConfig.serverUrl+url,data,config)
 }
 
-export default getPostRequest;
+const fetchRequest = (url) => {
+    config['headers']['Access-Control-Allow-Methods']='options,get'
+    return axios.get(urlConfig.serverUrl+url,config)
+}
+
+export  {
+    getPostRequest,
+    fetchRequest,
+}
 

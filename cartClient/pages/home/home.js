@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {postRequest} from  '../../core/Actions/cartAction/action';
+import {fetchData} from  '../../core/Actions/cartAction/action';
 import {urlConfig} from '../../static/conf/constants'
 class Home extends React.Component{
     constructor(){
@@ -8,8 +8,7 @@ class Home extends React.Component{
 
     }
     componentDidMount(){
-        console.log("rendered")
-        console.log(this.props.postRequest(urlConfig.categoriesUrl,{}))
+        console.log(this.props.fetchData(urlConfig.categoriesUrl))
     }
     render(){
         return(
@@ -24,4 +23,4 @@ const mapStateToProps = (state) => {
       categories: state.updateData.categories,
     }
   }
-  export default connect(mapStateToProps, { postRequest })(Home);
+  export default connect(mapStateToProps, { fetchData })(Home);

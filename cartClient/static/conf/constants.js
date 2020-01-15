@@ -23,7 +23,12 @@ const errorConfig = {
 
 const labelConfig = {
     SabkaBazaar : 'SabkaBazaar',
-    home : 'Home Page'
+    home : 'Home Page',
+    Offer: 'Offers',
+    Of: 'of',
+    Next: 'Next',
+    Prev: 'Prev',
+    Explore: 'Explore '
 }
 
 export {

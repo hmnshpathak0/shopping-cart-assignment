@@ -1,0 +1,10 @@
+@import '../../utility/theme/style/theme.scss';
+
+.home{
+    width: 100%;
+    .home_category{
+        display:flex;
+        flex-direction: column;
+        justify-content:space-around;
+    }
+}

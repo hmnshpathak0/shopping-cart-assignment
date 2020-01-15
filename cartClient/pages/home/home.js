@@ -4,6 +4,8 @@ import {fetchData} from  '../../utility/Actions/cartAction/action';
 import {urlConfig,labelConfig} from '../../static/conf/constants';
 import {compareFields} from '../../utility/utils/utils';
 import '../../utility/templates/molecules/banners/banner'
+import Banner from '../../utility/templates/molecules/banners/banner';
+import ShowCategory from '../../utility/templates/molecules/showCategory/showCategory';
 class Home extends React.Component{
     constructor(){
         super();
@@ -14,32 +16,55 @@ class Home extends React.Component{
 
     }
     //if all the values are same then return false
-    shouldComponentUpdate(props,state){
+    static getDerivedStateFromProps(props,state){
+         let bannerFlag = false;
+         let categoriesFlag = false;
+        
+        if(!state.banners.length){
+            bannerFlag = true
+        }else if(state.banners.length && compareFields(props.banners,state.banners)){
+            bannerFlag = true
+        }
+
+        if(!state.categories.length){
+            categoriesFlag = true
+         }else if(state.categories.length && compareFields(props.categories,state.categories)){
+             categoriesFlag = true
+         }
+         //returning the values if change is there
+        if(bannerFlag){
+            if(categoriesFlag){
+                return {
+                    categories:props.categories,
+                    banners: props.banners
+                }
+            }else{
+               return{ 
+                   banners: props.banners,
+               }
+            }
+        }else if(categoriesFlag){
+            return{
+                categories: props.categories
+            }
+        }
+        return null;
+    }
   
-        if(this.state.categories.length && props.categories){
-           return  compareFields(props.categories,this.state.categories)  
-        }
-
-        if(this.state.banners.length && props.banners.length){
-            return compareFields(props.banners,this.state.banners)
-        }
-        return true;
-    }
-
-    componentDidUpdate(){
-     
-        this.setState({categories:this.props.categories})
-        this.setState({banners:this.props.banners})
-    }
-
     componentDidMount(){
         this.props.fetchData(urlConfig.categoriesUrl);
         this.props.fetchData(urlConfig.bannersUrl);
     }
     render(){
         return (
-            <main className='home-container' aria-label={labelConfig.Home}>
-              <Carousel items={this.state.banners} />
+            <main className='home' aria-label={labelConfig.Home}>
+              <Banner banner={this.state.banners} />
+            <div className='home_category'>
+                {this.state.categories.map(cat => 
+                        <ShowCategory key={cat.id} item={cat} />
+            )
+        }
+            </div>
               
             </main>
           );

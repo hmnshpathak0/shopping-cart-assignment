@@ -1,0 +1,17 @@
+@import '../../../../theme/style/theme.scss';
+
+
+.home_banner_slider {
+      position:sticky;
+      
+      button{
+        padding: 0.3em;
+        cursor:  pointer !important;
+        .fa{
+            color: $color-grey-4;
+        }
+        .fa-active{
+            color:$color-black-1;
+        }
+    }
+}

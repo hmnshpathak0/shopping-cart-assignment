@@ -1,0 +1,27 @@
+@import '../../../theme/style/theme.scss';
+
+.home_banner{
+    padding:1em;
+    margin-top: 1em;
+    display:flex;
+    flex-direction:column;
+
+    .home_banner_item{
+        .home_banner_image{
+           width:  100%
+        }
+    }
+
+    .home_banner_btn {
+        display: none;
+        position: sticky;
+        justify-content: space-between;
+        margin-top: -15%;
+        margin-bottom: 10%;
+    }
+    @media only screen and (min-width:$screen-tablet){
+        .home_banner_btn{
+            display:flex;
+        }
+    }
+}

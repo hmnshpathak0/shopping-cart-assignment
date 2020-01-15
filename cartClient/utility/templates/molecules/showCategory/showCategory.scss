@@ -1,0 +1,16 @@
+.home_category_item{
+    display:flex;
+    justify-content: space-evenly;
+    .home_category_image{
+        width:40%;
+    }
+    .home_category_description{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .home_category_btn_div{
+        display:flex;
+        justify-content:center;
+    }
+}

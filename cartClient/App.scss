@@ -19,12 +19,20 @@
   }
   button{
     outline:0;
+    border:none;
+    background: none;
   }
 
   .app_container {
     position: relative;
     width: 100%;
     min-height: 75vh;
+  }
+  .line{
+    padding-bottom: 0.5em;
+    &-grey{
+      box-shadow: 0 24px 5px -24px $color-grey-3;
+    }
   }
 
   @media only screen and (min-width:$screen-laptop) {

@@ -1,27 +1,44 @@
-import React from 'react'
+import React from 'react';
+import {withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
 import CustomButton from '../../atoms/buttons/CustomButton/customButton';
-import {labelConfig} from '../../../../static/conf/constants'
+import {labelConfig} from '../../../../static/conf/constants';
+import {SAVE_CATEGORY} from '../../../Actions/cartAction/types';
+import {urlConfig} from '../../../../static/conf/constants';
 import './showCategory.scss';
 
 function ShowCategory(props){
     const {item} = props;
     const chooseCategory = () => {
-
+        props.saveData(item);
+        props.history.push('/'+urlConfig.productcompUrl)
     }
     return (
-        <figure className='home_category_item' arial-label={item.name} aria-describedby={item.description} >
-             <img src={item.imageUrl} alt={item.description} className='home_category_image' />
-             <div className='home_category_description'>
+        <figure className='cat_item line line-grey' arial-label={item.name} aria-describedby={item.description} >
+            { ((props.index)%2==0)&&<img src={item.imageUrl} alt={item.description} className='cat_image' />}
+             <div className='cat_description'>
              <span>{item.name}</span>
              <figcaption>
                  <span>{item.description}</span>
             </figcaption>
-            <div className='home_category_btn_div'>
-            <CustomButton text={labelConfig.Explore+item.key} handler={chooseCategory} styleClass='home_category_btn' label={labelConfig.Explore+item.key}/>
+            <div className='cat_action'>
+            <CustomButton text={labelConfig.Explore+item.key} handler={chooseCategory} styleClass='cat_action_btn' label={labelConfig.Explore+item.key}/>
             </div>
         </div>
+        { ((props.index)%2==1)&&<img src={item.imageUrl} alt={item.description} className='cat_image' />}
         </figure>
     )
 }
 
-export default ShowCategory;
+
+const mapPropsToDispatcher = (dispatch) => {
+    return {
+        saveData: item => dispatch( {
+            type:SAVE_CATEGORY,
+            payload: item
+        } )
+    }
+}
+                    
+
+export default withRouter(connect(null,mapPropsToDispatcher)(ShowCategory));

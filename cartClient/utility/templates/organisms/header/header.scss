@@ -7,72 +7,77 @@
     align-items: center;
     box-shadow: 0 0 3.1vw 0 $color-grey-2;
     
-    .header_logo{
+    &_logo{
         content:url('/static/images/logo.png');
         padding:0.5em;
         width:40%;
     }
     
     
-    .header_leftpan{
+    &_leftpan{
         display:flex;
         min-width: 0;
         align-items: center;
         flex:0.7
     }
-    .header_rightpan{
+    &_rightpan{
         flex: 0.3;
         display: flex;
         align-self: stretch;
         background: $color-grey-2;
 
     }
-    .fa{
+    &_icon{
         cursor:pointer;
         color: $color-pink-2;
         outline:0;
     }
-    .header_menu{
+    &_menu{
         display:none;
         ul{
             margin:auto;
         }
-    }
-    .header_menu_item{
-        padding:0.8rem;
-        display:inline-block;
-        cursor:pointer;
-        &:hover,&:active{
-            border-bottom:1px solid $color-black-1;
+        &_item{
+            padding:0.8rem;
+            display:inline-block;
+            cursor:pointer;
+            &:hover,&:active{
+                border-bottom:1px solid $color-black-1;
+            }
+    
         }
+    }
 
-    }
     @media only screen and (min-width:$screen-tablet) {
-        .fa{
-            display:none;
-        }
-        .header_menu{
-            display:block;
-        }
-        .header_logo{
-            width:25%;
-        }
-        .header_leftpan{
-            flex:0.8;
-        }
-        .header_rightpan{
-            flex:0.2
+        .header{
+            &_icon{
+                display:none;
+            }
+            &_menu{
+                display:block;
+            }
+            &_logo{
+                width:25%;
+            }
+            &_leftpan{
+                flex:0.8;
+            }
+            &_rightpan{
+                flex:0.2
+            }
         }
     }
     @media only screen and (min-width:$screen-laptop) {
-        .header_logo{
-            width:15%;
-        }
-        .header_leftpan{
-            flex:0.9;
-        }
-        .header_rightpan{
-            flex:0.1
+        .header{
+            &_logo{
+                width:15%;
+            }
+            &_leftpan{
+                flex:0.9;
+            }
+            &_rightpan{
+                flex:0.1
+            }
         }
     }
 }

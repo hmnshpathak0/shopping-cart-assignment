@@ -6,7 +6,7 @@ function Slider(props) {
     const items = []
     for(let i=0;i<props.total;i++){
        items.push(<button onClick={() => props.slide(i)} key={i} aria-label={(i+1)+labelConfig.Of+props.total} >
-       <i className={'fa fa-circle'+ ((i==props.activeSlider)?' fa-active':'')}/>
+       <i className={'fa fa-circle banner_ciricon'+ ((i==props.activeSlider)?' banner_ciricon-active':'')}/>
        </button>
        )
     }

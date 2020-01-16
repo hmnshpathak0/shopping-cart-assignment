@@ -41,7 +41,7 @@ class Header extends React.Component{
         <div ref={this.headerElement} className='header'>
         <nav role="navigation" className='header_leftpan'>
         <img className='header_logo' title='sabka Bazaar' alt='sabka Bazaar'/>
-        <i title='Menu bar' tabIndex='0'  role="navigation" onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars fa-2x'></i>
+        <i title='Menu bar' tabIndex='0'  role="navigation" onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
         <div className='header_menu'>
             {links.slice(0,2).map((nav,index) =>{
                return  <NavLink aria-label={nav.name} key={index}  className='header_menu_item' to={'/'+nav.url}>{nav.name}</NavLink>

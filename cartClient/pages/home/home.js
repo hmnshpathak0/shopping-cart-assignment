@@ -6,7 +6,9 @@ import {compareFields} from '../../utility/utils/utils';
 import '../../utility/templates/molecules/banners/banner'
 import Banner from '../../utility/templates/molecules/banners/banner';
 import ShowCategory from '../../utility/templates/molecules/showCategory/showCategory';
-class Home extends React.Component{
+import './home.scss';
+
+class Home extends Component{
     constructor(){
         super();
         this.state={
@@ -17,6 +19,7 @@ class Home extends React.Component{
     }
     //if all the values are same then return false
     static getDerivedStateFromProps(props,state){
+        console.log(props.category)
          let bannerFlag = false;
          let categoriesFlag = false;
         
@@ -59,9 +62,9 @@ class Home extends React.Component{
         return (
             <main className='home' aria-label={labelConfig.Home}>
               <Banner banner={this.state.banners} />
-            <div className='home_category'>
-                {this.state.categories.map(cat => 
-                        <ShowCategory key={cat.id} item={cat} />
+            <div className='home_cat'>
+                {this.state.categories.map((cat,index) => 
+                        <ShowCategory index={index} key={cat.id} item={cat} />
             )
         }
             </div>

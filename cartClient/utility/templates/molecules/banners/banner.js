@@ -15,7 +15,6 @@ function Banner(props) {
   };
   //handler for previous button
   const handlePrev = () => {
-    console.log("there",currentItem)
     setcurrentItem(prevItem => (prevItem==0)?length -1:prevItem -1)
   }
  //handler for next button
@@ -37,9 +36,9 @@ function Banner(props) {
       </div>
     ))}
   </AutoPlaySwipeableViews>
-  <div className='home_banner_btn'>
-    <CustomButton control='bannerSlide' label={labelConfig.Prev} handler={handlePrev} styleClass='home_banner_button' text={labelConfig.Prev}/>
-    <CustomButton control='bannerSlide' label={labelConfig.Next} handler={handleNext} styleClass='home_banner_button' text={labelConfig.Next}/>
+  <div className='home_banner_action'>
+    <CustomButton control='bannerSlide' label={labelConfig.Prev} handler={handlePrev} styleClass='home_banner_btn' text={labelConfig.Prev}/>
+    <CustomButton control='bannerSlide' label={labelConfig.Next} handler={handleNext} styleClass='home_banner_btn' text={labelConfig.Next}/>
   </div>
   <Slider activeSlider={currentItem} total={props.banner.length} slide={handleCount}/>
   </div>

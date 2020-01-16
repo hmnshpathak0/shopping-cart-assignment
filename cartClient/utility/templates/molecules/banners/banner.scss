@@ -6,22 +6,27 @@
     display:flex;
     flex-direction:column;
 
-    .home_banner_item{
-        .home_banner_image{
-           width:  100%
-        }
+    &_image{
+        width: 100%;
     }
 
-    .home_banner_btn {
+    &_action {
         display: none;
         position: sticky;
         justify-content: space-between;
         margin-top: -15%;
         margin-bottom: 10%;
-    }
-    @media only screen and (min-width:$screen-tablet){
         .home_banner_btn{
-            display:flex;
+            color:$color-white-1;
+            background: $color-black-transparent-2;
         }
     }
+    @media only screen and (min-width:$screen-tablet){
+        .home_banner{
+            &_action{
+                display:flex;
+            }
+        }
+    }
+
 }

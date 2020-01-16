@@ -1,9 +1,10 @@
-import {SET_CATEGORIES,GET_BANNERS} from './types'
+import {SET_CATEGORIES,GET_BANNERS, SAVE_CATEGORY} from './types'
 //initail state
 
 const initialState = {
     categories:[],
     banners: [],
+    category:{},
 };
 
 
@@ -15,6 +16,9 @@ const updateData = (state = initialState, action) => {
         });
         case GET_BANNERS: return Object.assign({}, state, {
             banners: action.payload
+        });
+        case SAVE_CATEGORY: return Object.assign({}, state, {
+            category: action.payload
         });
         
         default: return state;

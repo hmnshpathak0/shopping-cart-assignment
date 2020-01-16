@@ -2,7 +2,7 @@
 
 .home{
     width: 100%;
-    .home_category{
+    &_cat{
         display:flex;
         flex-direction: column;
         justify-content:space-around;

@@ -1,18 +1,22 @@
 [
     {
       "url": "home",
-      "name": "Home"
+      "name": "Home",
+      "component": "Home"
     },
     {
       "url": "plp",
-      "name": "Products"
+      "name": "Products",
+      "component": "ProductDetails"
     },
     {
       "url": "login",
-      "name": "Sign In"
+      "name": "Sign In",
+      "component": "Login"
     },
     {
       "url": "register",
-      "name": "Register"
+      "name": "Register",
+      "component": "Register"
     }
   ]

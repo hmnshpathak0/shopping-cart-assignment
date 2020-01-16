@@ -5,6 +5,12 @@ const urlConfig = {
     cartApiUrl: 'addToCart',
     categoriesUrl: 'categories',
     bannersUrl: 'banners',
+    cartcompUrl: 'myCart',
+    productcompUrl: 'plp',
+    logincompUrl: 'login',
+    registercompUrl: 'register',
+    homecompUrl: 'home',
+    
 }
 
 //all configs related to response code

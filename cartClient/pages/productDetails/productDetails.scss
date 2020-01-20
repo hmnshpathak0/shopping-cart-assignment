@@ -1,0 +1,46 @@
+@import '../../utility/theme/style/theme.scss';
+
+.cat_products {
+    display:flex;
+    flex-direction:column;
+    
+    .cat_menu{
+        background: $color-grey-1;
+        width:30%;
+        display:none;
+        align-items: stretch;
+        flex-direction: column;
+        padding:0.3em;
+         min-height: 95vh;
+        &_btn{
+            padding:0.8em;
+            text-align: left;
+            border-bottom: solid 0.1vw $color-grey-4;
+
+        }
+    }
+    .cat_product_items{
+        display:flex;
+    }
+    @media only screen and (min-width:$screen-tablet){
+        flex-direction: row;
+        .cat_menu {
+            display:flex;
+        }
+        .cat_product_items{
+            flex-direction: row;
+        }
+    }
+    @media only screen and (min-width:$screen-desktop){
+        flex-direction: row;
+        .cat_menu {
+            display:flex;
+            min-height:88vh;
+            width:20%;
+        }
+        .cat_product_items{
+            flex-direction: row;
+        }
+    }
+
+}

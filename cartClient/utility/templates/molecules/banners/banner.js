@@ -23,7 +23,7 @@ function Banner(props) {
 }
   return (
     (props.banner.length > 0) &&
-    <div className='home_banner' role='region' aria-label={labelConfig.Offer}>
+    <section className='home_banner' role='region' aria-label={labelConfig.Offer}>
     <AutoPlaySwipeableViews axis='x' index={currentItem}
     onChangeIndex={handleCount} enableMouseEvents
     aria-live='off'>
@@ -41,7 +41,7 @@ function Banner(props) {
     <CustomButton control='bannerSlide' label={labelConfig.Next} handler={handleNext} styleClass='home_banner_btn' text={labelConfig.Next}/>
   </div>
   <Slider activeSlider={currentItem} total={props.banner.length} slide={handleCount}/>
-  </div>
+  </section>
   );
 }
 

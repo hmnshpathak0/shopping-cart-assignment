@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
-import CustomButton from '../../atoms/buttons/CustomButton/customButton';
+import CustomButton from '../../atoms/buttons/customButton/customButton';
 import {labelConfig} from '../../../../static/conf/constants';
 import {SAVE_CATEGORY} from '../../../Actions/cartAction/types';
 import {urlConfig} from '../../../../static/conf/constants';

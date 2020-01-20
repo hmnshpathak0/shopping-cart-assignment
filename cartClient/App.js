@@ -32,7 +32,7 @@ class App extends Component {
       <BrowserRouter>
        <div className='app'>
       <Header/>
-          <div id='app_container' className='app_container'>
+          <div id='main_container' className='main_container'>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />

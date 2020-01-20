@@ -5,6 +5,7 @@ const urlConfig = {
     cartApiUrl: 'addToCart',
     categoriesUrl: 'categories',
     bannersUrl: 'banners',
+    productsUrl: 'products',
     cartcompUrl: 'myCart',
     productcompUrl: 'plp',
     logincompUrl: 'login',
@@ -34,7 +35,9 @@ const labelConfig = {
     Of: 'of',
     Next: 'Next',
     Prev: 'Prev',
-    Explore: 'Explore '
+    Explore: 'Explore ',
+    CatNav: 'category navigation',
+    Products: 'products',
 }
 
 export {

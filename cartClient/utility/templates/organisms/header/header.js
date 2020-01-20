@@ -21,12 +21,11 @@ class Header extends React.Component{
        //setting the toggle value for dropdown menu
         this.setState({toggle : !this.state.toggle})
         //setting the dropdown top position when menu is opened
-        console.log(this.headerElement.current.clientHeight)
         if(!this.state.toggle && this.state.height!=this.headerElement.current.clientHeight)
             this.setState({height:this.headerElement.current.clientHeight})
     }
     updateDimensions = () => {
-        if(this.state.height!=this.headerElement.current.clientHeight)
+        if(this.state.toggle && this.state.height!=this.headerElement.current.clientHeight)
             this.setState({height:this.headerElement.current.clientHeight})
     }
     //Calling the componentDidMount life cycle

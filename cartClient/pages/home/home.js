@@ -62,12 +62,12 @@ class Home extends Component{
         return (
             <main className='home' aria-label={labelConfig.Home}>
               <Banner banner={this.state.banners} />
-            <div className='home_cat'>
+            <section className='home_cat'>
                 {this.state.categories.map((cat,index) => 
                         <ShowCategory index={index} key={cat.id} item={cat} />
             )
         }
-            </div>
+            </section>
               
             </main>
           );

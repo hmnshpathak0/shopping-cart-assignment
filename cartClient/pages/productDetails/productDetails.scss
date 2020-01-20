@@ -19,8 +19,14 @@
 
         }
     }
-    .cat_product_items{
+    .cat_dropdown{
+        display:none;
+    }
+    &_items{
         display:flex;
+        width:70%;
+        flex-wrap: wrap;
+        padding: 1em;
     }
     @media only screen and (min-width:$screen-tablet){
         flex-direction: row;

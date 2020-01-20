@@ -1,0 +1,28 @@
+@import '../../../theme/style/theme.scss';
+
+.product_item{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding:1em;
+    .product_desc{
+        display:flex;
+        justify-content: space-between;
+    }
+    .product_image{
+        width:50%;
+    }
+    .product_description{
+        background: $color-grey-1;
+        text-align: left;
+        padding: 0.4em;
+    }
+    .product_btn{
+            background: $color-pink-2;
+            color:$color-white-1;
+            align-self: stretch;
+    }
+
+}

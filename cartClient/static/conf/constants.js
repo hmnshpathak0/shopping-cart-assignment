@@ -38,6 +38,9 @@ const labelConfig = {
     Explore: 'Explore ',
     CatNav: 'category navigation',
     Products: 'products',
+    Buy: 'Buy now @',
+    MyCart: 'My Cart',
+    AddToCart: 'Add to Cart',
 }
 
 export {

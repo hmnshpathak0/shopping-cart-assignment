@@ -14,7 +14,7 @@ function ShowCategory(props){
         props.history.push('/'+urlConfig.productcompUrl)
     }
     return (
-        <figure className='cat_item line line-grey' arial-label={item.name} aria-describedby={item.description} >
+        <figure className='cat_item line line-bottom-grey' arial-label={item.name} aria-describedby={item.description} >
             { ((props.index)%2==0)&&<img src={item.imageUrl} alt={item.description} className='cat_image' />}
              <div className='cat_description'>
              <span>{item.name}</span>

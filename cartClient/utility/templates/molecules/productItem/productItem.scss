@@ -18,11 +18,17 @@
         background: $color-grey-1;
         text-align: left;
         padding: 0.4em;
+        height:15vw;
+        text-overflow: clip;
+        overflow: hidden;
     }
     .product_btn{
             background: $color-pink-2;
             color:$color-white-1;
             align-self: stretch;
+    }
+    h5{
+        flex:1;
     }
 
 }

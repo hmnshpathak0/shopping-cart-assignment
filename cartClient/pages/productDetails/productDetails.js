@@ -21,7 +21,6 @@ class ProductDetails extends React.Component{
 
     //mapping the props to state
     static getDerivedStateFromProps(props,state){
-        console.log(props)
         if(!state.categories.length){
             return{
                 category: props.category,
@@ -54,7 +53,7 @@ class ProductDetails extends React.Component{
                     <SideNav categories={this.state.categories} />
                 </aside>
                 <section className='cat_dropdown'> 
-                <CatMenu categories={this.state.categories}/>
+                <CatMenu category={this.state.category} categories={this.state.categories}/>
                 </section>
                 <section className='cat_products_items'>
                 {

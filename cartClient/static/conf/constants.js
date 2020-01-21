@@ -41,6 +41,7 @@ const labelConfig = {
     Buy: 'Buy now @',
     MyCart: 'My Cart',
     AddToCart: 'Add to Cart',
+    SelectCategory: 'Select a Category',
 }
 
 export {

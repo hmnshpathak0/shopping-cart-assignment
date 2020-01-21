@@ -5,6 +5,7 @@
     flex-direction:column;
     
     .cat_menu{
+        display:none;
         background: $color-grey-1;
         width:30%;
         display:none;
@@ -20,11 +21,11 @@
         }
     }
     .cat_dropdown{
-        display:none;
+        display:block ;
+        width:100%;
     }
     &_items{
         display:flex;
-        width:70%;
         flex-wrap: wrap;
         padding: 1em;
     }
@@ -35,6 +36,7 @@
         }
         .cat_product_items{
             flex-direction: row;
+            width:70%;
         }
     }
     @media only screen and (min-width:$screen-desktop){
@@ -46,6 +48,7 @@
         }
         .cat_product_items{
             flex-direction: row;
+            width:80%;
         }
     }
 

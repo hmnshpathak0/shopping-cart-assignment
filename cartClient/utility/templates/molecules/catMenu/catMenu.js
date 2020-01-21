@@ -3,22 +3,30 @@ import {connect} from 'react-redux';
 import {Dropdown} from 'react-bootstrap';
 import {SAVE_CATEGORY} from '../../../Actions/cartAction/types';
 import {labelConfig} from '../../../../static/conf/constants'
+import './catMenu.scss';
+
 function CatMenu(props){
     const {categories} = props;
     const {category} =props;
+    const selectElememt = React.createRef();
+
+    const changeCategory = () => {
+        let cat = categories.find(item => item.name == selectElememt.current.value)
+        if(cat)
+            props.saveCategory(cat)
+    }
     return(
        <React.Fragment>
-        <Dropdown   role='menu'>
-            <Dropdown.Toggle  id="cat_dropdown">
-            {category.name?category.name:labelConfig.SelectCategory}
-            </Dropdown.Toggle>
-        <Dropdown.Menu >
-            {
-            props.categories.map(item => <Dropdown.Item  key={item.id} >{item.name}</Dropdown.Item> )
-            }
-        </Dropdown.Menu>
-    </Dropdown>
-           
+           <select  className='cat_dropdown_select' name='selectedCategory' ref={selectElememt} onChange={changeCategory}>
+          <option value=''>{labelConfig.SelectCategory}</option>
+           {     categories.map(item => {
+                    if(category.id && item.id==category.id)
+                        return <option key={item.id} selected value={item.name}>{item.name}</option>
+                    else
+                        return <option key={item.id} value={item.name}>{item.name}</option>
+                })
+                }            
+            </select>
         </React.Fragment>
     )
 }

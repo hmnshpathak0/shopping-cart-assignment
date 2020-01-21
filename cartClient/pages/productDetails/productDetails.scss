@@ -20,9 +20,10 @@
 
         }
     }
-    .cat_dropdown{
+    .cat_dropdown_div{
         display:block ;
         width:100%;
+        padding:0.5em;
     }
     &_items{
         display:flex;
@@ -34,9 +35,12 @@
         .cat_menu {
             display:flex;
         }
-        .cat_product_items{
+        .cat_products_items{
             flex-direction: row;
             width:70%;
+        }
+        .cat_dropdown_div{
+            display:none;
         }
     }
     @media only screen and (min-width:$screen-desktop){
@@ -46,9 +50,12 @@
             min-height:88vh;
             width:20%;
         }
-        .cat_product_items{
+        .cat_products_items{
             flex-direction: row;
             width:80%;
+        }
+        .cat_dropdown_div{
+            display:none;
         }
     }
 

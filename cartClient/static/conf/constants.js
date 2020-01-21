@@ -13,6 +13,12 @@ const urlConfig = {
     homecompUrl: 'home',
     
 }
+//all config related to screen size
+const screenConfig= {
+    ScreenTablet:'481px', /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    ScreenLaptop:'700px',
+    ScreenDesktop:'1025px', /* big landscape tablets, laptops, and desktops */
+}
 
 //all configs related to response code
 
@@ -45,5 +51,5 @@ const labelConfig = {
 }
 
 export {
-    urlConfig,codeConfig,errorConfig,labelConfig
+    urlConfig,codeConfig,errorConfig,labelConfig,screenConfig
 }

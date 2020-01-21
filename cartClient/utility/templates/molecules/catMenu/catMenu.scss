@@ -1,6 +1,10 @@
 @import '../../../theme/style/theme.scss';
-#cat_dropdown{
+.cat_dropdown_select{
     color:white;
-    background: $color-pink-1;
+    background: $color-pink-2;
     width:100%;
+    padding:0.5em;
+    option{
+        padding:0.5em;
+    }
 }

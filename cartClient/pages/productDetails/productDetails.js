@@ -21,6 +21,7 @@ class ProductDetails extends React.Component{
 
     //mapping the props to state
     static getDerivedStateFromProps(props,state){
+    
         if(!state.categories.length){
             return{
                 category: props.category,
@@ -30,9 +31,9 @@ class ProductDetails extends React.Component{
         }else if(!state.products.length){
            return { 
                     products: props.products,
-                    catproducts: props.products.filter(item => props.category.id==item.category)
+                    catproducts: props.category.id ?props.products.filter(item => props.category.id==item.category):props.products,
            }
-        }else if(props.category.id!=state.category.id){
+        }else if(props.category.id && props.category.id!=state.category.id){
             return {
                 category:props.category,
                 catproducts: state.products.filter(item => props.category.id==item.category),
@@ -44,6 +45,16 @@ class ProductDetails extends React.Component{
         
         //call the Products API to fetch all products
         this.props.fetchData(urlConfig.productsUrl);
+        if(!this.state.categories.length){
+            this.props.fetchData(urlConfig.categoriesUrl)
+        }
+    
+    }
+
+    componentDidUpdate(){
+        if(!this.state.categories.length){
+            this.props.fetchData(urlConfig.categoriesUrl)
+        }
     
     }
     render(){
@@ -52,9 +63,9 @@ class ProductDetails extends React.Component{
                 <aside className='cat_menu'>
                     <SideNav categories={this.state.categories} />
                 </aside>
-                <section className='cat_dropdown'> 
+                <div className='cat_dropdown_div'> 
                 <CatMenu category={this.state.category} categories={this.state.categories}/>
-                </section>
+                </div>
                 <section className='cat_products_items'>
                 {
                   this.state.catproducts.map(product => <ProductItem key={product.id} item={product}/>)

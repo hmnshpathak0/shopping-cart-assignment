@@ -6,7 +6,7 @@
     width:100%;
     justify-content: space-evenly;
     align-items: flex-start;
-    padding:1em;
+    padding:0.4em 0;
     border-bottom : dashed 0.2em $color-grey-1;
     &_info{
         display:flex;
@@ -37,23 +37,54 @@
     &_title{
         min-height:5vw;
         font-size:1rem;
+        text-align:left;
     }
     @media only screen and (min-width:$screen-tablet){
-        width:50%;
-        .product_item_desc{
+        width:49%;
+        &:nth-child(odd){
+            margin-right: 0.5em;
+        }
+        &:nth-child(even){
+            padding-left: 0.5em;
+        }
+        &_desc{
            height:25vw;
+           
             
+        }
+        
+    }
+
+    @media only screen and (min-width:$screen-laptop){
+        &_title{
+            min-height:3vw;
+            font-size:1.2em;
         }
         
     }
     @media only screen and (min-width:$screen-desktop){
-        width:50%;
-        .product_item_desc{
-           height:15vw;
+        width:23%;
+        margin-right:0.5vw;
+        padding:0.3em;
+        &_desc{
+           height:5vw;
             
+        }
+        &_image{
+            width:100%;
+        }
+        &_info{
+            flex-direction: column;
+        }
+        &_title{
+            min-height:9.2vw;
+            font-size:1.2em;
         }
         
     }
+  
+  
+   
    
 
 }

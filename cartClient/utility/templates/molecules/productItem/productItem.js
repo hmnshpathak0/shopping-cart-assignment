@@ -19,16 +19,19 @@ function ProductItem(props){
     return(
        
         <React.Fragment >
-             {(!screenSize) ? (<div className='product_item'>
+            <div className='product_item'>
             <h5 className='product_item_title'>{item.name}</h5>
-            <figure className='product_item_info'>
-                <img alt={item.name} className='product_item_image' src={item.imageURL}/>
-                <figcaption title={item.description} className='product_item_desc'>{item.description}</figcaption>
-            </figure>
+             {(!screenSize) ? (
+                 <React.Fragment>
+                 <figure className='product_item_info'>
+                    <img alt={item.name} className='product_item_image' src={item.imageURL}/>
+                    <figcaption title={item.description} className='product_item_desc'>{item.description}</figcaption>
+                </figure>
             <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={addCartItem}/>
-             </div>)
-             : (<div className='product_item'>
-                <h5 className='product_item_title'>{item.name}</h5>
+                </React.Fragment>
+            )
+             : (
+                 <React.Fragment>
             <figure className='product_item_info'>
                 <img alt={item.name} className='product_item_image' src={item.imageURL}/>
                 <div className='product_item_content'>
@@ -36,10 +39,12 @@ function ProductItem(props){
                 <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={addCartItem}/>
                 </div>
             </figure>
-            
-             </div>
+            </React.Fragment>
+             
              )
+            
 }
+</div>
             </React.Fragment>
     )
 }

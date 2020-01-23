@@ -30,6 +30,7 @@
         display:flex;
         flex-wrap: wrap;
         padding: 1em;
+        align-content: flex-start;
     }
     @media only screen and (min-width:$screen-tablet){
         flex-direction: row;
@@ -58,6 +59,10 @@
         .cat_dropdown_div{
             display:none;
         }
+    }
+    @media only screen and (min-height:$itab-height){
+       
+        min-height:95vh;
     }
 
 }

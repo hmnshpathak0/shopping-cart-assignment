@@ -3,10 +3,8 @@
 .product_item{
     display:flex;
     flex-direction: column;
-    width:100%;
-    justify-content: space-evenly;
-    align-items: flex-start;
     padding:0.4em 0;
+    width:100%;
     border-bottom : dashed 0.2em $color-grey-1;
     &_info{
         display:flex;
@@ -28,6 +26,7 @@
         height:35vw;
         text-overflow: clip;
         overflow: hidden;
+   
     }
     .product_item_btn{
             background: $color-pink-2;
@@ -35,39 +34,39 @@
             align-self: stretch;
     }
     &_title{
-        min-height:5vw;
         font-size:1rem;
         text-align:left;
     }
     @media only screen and (min-width:$screen-tablet){
         width:49%;
-        &:nth-child(odd){
-            margin-right: 0.5em;
-        }
-        &:nth-child(even){
-            padding-left: 0.5em;
-        }
+        max-height:42vw;
         &_desc{
            height:25vw;
            
             
         }
+        &_title{
+            min-height:7.2vw;
+        }
         
     }
 
     @media only screen and (min-width:$screen-laptop){
+        max-height: 40vw;
         &_title{
-            min-height:3vw;
-            font-size:1.2em;
+            font-size:1em;
+            min-height:5vw;
         }
         
     }
     @media only screen and (min-width:$screen-desktop){
-        width:23%;
-        margin-right:0.5vw;
-        padding:0.3em;
+        width:24%;
+        padding: 1em;
+        max-height:35vw;
         &_desc{
            height:5vw;
+           margin-top: 0.4em;
+           font-size:0.7em;
             
         }
         &_image{
@@ -77,8 +76,8 @@
             flex-direction: column;
         }
         &_title{
-            min-height:9.2vw;
-            font-size:1.2em;
+            font-size:1em;
+            min-height:8vw;
         }
         
     }

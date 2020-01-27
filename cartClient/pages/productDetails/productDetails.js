@@ -5,6 +5,7 @@ import CatMenu from '../../utility/templates/molecules/catMenu/catMenu';
 import './ProductDetails.scss';
 import ProductItem from '../../utility/templates/molecules/productItem/productItem';
 import {fetchData} from '../../utility/Actions/cartAction/action';
+import {SET_CART} from '../../utility/Actions/cartAction/types'
 import {urlConfig} from '../../static/conf/constants'
 class ProductDetails extends React.Component{
     constructor(){
@@ -14,6 +15,9 @@ class ProductDetails extends React.Component{
             categories: [],
             products: [],
             catproducts: [],
+            cart:[],
+            cartStatus:'',
+
         }
     }
 
@@ -21,42 +25,60 @@ class ProductDetails extends React.Component{
 
     //mapping the props to state
     static getDerivedStateFromProps(props,state){
-    
-        if(!state.categories.length){
-            return{
-                category: props.category,
-                categories: props.categories,
-            }
-            
-        }else if(!state.products.length){
-           return { 
-                    products: props.products,
-                    catproducts: props.category.id ?props.products.filter(item => props.category.id==item.category):props.products,
-           }
-        }else if(props.category.id && props.category.id!=state.category.id){
-            return {
-                category:props.category,
-                catproducts: state.products.filter(item => props.category.id==item.category),
+        console.log(props.cart)
+        let update = {};
+        if(!state.categories.length && props.categories.length){
+            update.categories = props.categories;
+        }
+
+        if(!Object.keys(state.category).length && Object.keys(props.category).length){
+            update.category = props.category;
+            if(state.products.length){
+                update.catproducts = props.products.filter(item => props.category.id==item.category)
             }
         }
-        return null
+        
+        if(!state.products.length && props.products.length){
+            update.products = props.products;
+            update.catproducts = props.products;
+        }
+        
+        if(props.category.id && props.category.id!=state.category.id){
+            update.catproducts = props.products.filter(item => props.category.id==item.category);
+            if(props.cart.length){
+                update.cart = props.cart;
+            }
+        }
+
+        
+            update.cart = props.cart;
+
+        return Object.keys(update).length?update:null;
     }
 
     componentDidMount(){
         
         //call the Products API to fetch all products
-        this.props.fetchData(urlConfig.productsUrl);
+        this.props.getRequest(urlConfig.productsUrl);
         if(!this.state.categories.length){
-            this.props.fetchData(urlConfig.categoriesUrl)
+            this.props.getRequest(urlConfig.categoriesUrl)
         }
+        this.props.getRequest(urlConfig.cartApiUrl);
+    
     
     }
 
     componentDidUpdate(){
         if(!this.state.categories.length){
-            this.props.fetchData(urlConfig.categoriesUrl)
+            this.props.getRequest(urlConfig.categoriesUrl)
         }
     
+    }
+
+    addToCart = (item) => {
+        const cartItem = Object.assign({},item)
+        cartItem.quantity = 1;
+        this.props.addItem(cartItem)
     }
     render(){
         return(
@@ -69,7 +91,7 @@ class ProductDetails extends React.Component{
                 </div>
                 <section className='cat_products_items'>
                 {
-                  this.state.catproducts.map(product => <ProductItem key={product.id} item={product}/>)
+                  this.state.catproducts.map(product => <ProductItem handler={this.addToCart} key={product.id} item={product}/>)
 
                 }  
                 
@@ -84,8 +106,18 @@ const mapStateToProps = state => {
         categories : state.updateData.categories,
         category : state.updateData.category,
         products: state.updateData.products,
+        cart: state.updateData.cart,
     }
 };
 
+const mapDispatcherToProps = dispatch => {
+    return {
+        getRequest: (url) => dispatch(fetchData(url)),
+        addItem: (item) => dispatch({
+            type: SET_CART,
+            payload: item,
+        })
+    }
+}
          
-export default connect(mapStateToProps,{fetchData})(ProductDetails);
+export default connect(mapStateToProps,mapDispatcherToProps)(ProductDetails);

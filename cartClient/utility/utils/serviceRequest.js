@@ -22,8 +22,20 @@ const fetchRequest = (url) => {
     return axios.get(urlConfig.serverUrl+url,config)
 }
 
+const putRequest = (url,data) => {
+    config['headers']['Access-Control-Allow-Methods']='options,put'
+    return axios.put(urlConfig.serverUrl+url+'/'+data.id,data,config)
+}
+
+const deleteRequest = (url,id) => {
+    config['headers']['Access-Control-Allow-Methods']='options,delete'
+    return axios.get(urlConfig.serverUrl+url+'/'+id,config)
+}
+
 export  {
     getPostRequest,
     fetchRequest,
+    putRequest,
+    deleteRequest
 }
 

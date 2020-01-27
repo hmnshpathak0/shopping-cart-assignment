@@ -11,7 +11,7 @@ class ProductItem extends React.Component{
         }
     }
     addCartItem = () => {
-
+        this.props.handler(this.props.item);
     }
     
 

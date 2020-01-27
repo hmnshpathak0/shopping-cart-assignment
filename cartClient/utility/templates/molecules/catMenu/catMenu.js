@@ -17,15 +17,12 @@ function CatMenu(props){
     }
     return(
        <React.Fragment>
-           <select  className='cat_dropdown_select' name='selectedCategory' ref={selectElememt} onChange={changeCategory}>
+           <select  value={category.name?category.name:""} className='cat_dropdown_select' name='selectedCategory' ref={selectElememt} onChange={changeCategory}>
           <option value=''>{labelConfig.SelectCategory}</option>
-           {     categories.map(item => {
-                    if(category.id && item.id==category.id)
-                        return <option key={item.id} selected value={item.name}>{item.name}</option>
-                    else
-                        return <option key={item.id} value={item.name}>{item.name}</option>
-                })
-                }            
+            {     
+               categories.map(item =>  <option key={item.id}  value={item.name}>{item.name}</option>)
+                    
+            }            
             </select>
         </React.Fragment>
     )

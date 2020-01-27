@@ -6,6 +6,8 @@ const urlConfig = {
     categoriesUrl: 'categories',
     bannersUrl: 'banners',
     productsUrl: 'products',
+    loginUrl:'addToCart',
+    registerUrl: 'addToCart',
     cartcompUrl: 'myCart',
     productcompUrl: 'plp',
     logincompUrl: 'login',
@@ -48,6 +50,10 @@ const labelConfig = {
     MyCart: 'My Cart',
     AddToCart: 'Add to Cart',
     SelectCategory: 'Select a Category',
+    Login: 'Login',
+    LoginMessage: 'Get Access to Orders,Whishlist and Recommendation',
+    SignIn: 'SignUp',
+    RegisterMessage: 'We dont share any personal details with anyone'
 }
 
 export {

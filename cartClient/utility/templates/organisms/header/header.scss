@@ -23,16 +23,21 @@
     &_rightpan{
         flex: 0.3;
         display: flex;
+        flex-direction:column;
         align-self: stretch;
-        background: $color-grey-2;
+        justify-content: space-between;
+        &_nav{
+            display: none;
+        }
 
     }
-    &_icon{
+    &_iconBtn{
         cursor:pointer;
         color: $color-pink-2;
+        background: none;
         outline:0;
     }
-    &_menu{
+    &_nav{
         display:none;
         ul{
             margin:auto;
@@ -49,8 +54,7 @@
     }
 
     @media only screen and (min-width:$screen-tablet) {
-        .header{
-            &_icon{
+            &_iconBtn{
                 display:none;
             }
             &_menu{
@@ -63,21 +67,32 @@
                 flex:0.8;
             }
             &_rightpan{
-                flex:0.2
+                flex:0.2;
+                &_nav{
+                    display:flex;
+                    justify-content: space-evenly;
+                }
             }
-        }
+            &_nav{
+                display:flex;
+            }
+    
     }
     @media only screen and (min-width:$screen-laptop) {
-        .header{
             &_logo{
-                width:15%;
+                width:20%;
             }
             &_leftpan{
                 flex:0.9;
             }
             &_rightpan{
-                flex:0.1
+                flex:0.1;
+                &_nav{
+                    display:flex;
+                    justify-content: space-evenly;
+                }
             }
+           
         }
-    }
+    
 }

@@ -34,22 +34,33 @@ class Header extends React.Component{
         window.addEventListener('resize', this.updateDimensions);
 
     }
+    componentWillUnmount(){
+        window.removeEventListener("resize",this.updateDimensions);
+    }
     render(){
         
         return(
         <div ref={this.headerElement} className='header'>
         <nav role="navigation" className='header_leftpan'>
         <img className='header_logo' title='sabka Bazaar' alt='sabka Bazaar'/>
-        <i title='Menu bar' tabIndex='0'  role="navigation" onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
-        <div className='header_menu'>
+        <button className='header_iconBtn' aria-label='Menu Bar' aria-controls='navigation links'> 
+            <i title='Menu bar' tabIndex='0'  role="navigation" onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
+        </button>
+        <div className='header_nav'>
             {links.slice(0,2).map((nav,index) =>{
-               return  <NavLink aria-label={nav.name} key={index}  className='header_menu_item' to={'/'+nav.url}>{nav.name}</NavLink>
+               return  <NavLink aria-label={nav.name} key={index}  className='header_nav_item' to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>
         <DropDown height={this.state.height} toggle={this.state.toggle}/>
         </nav>
         <div className='header_rightpan'>
+        <div className='header_rightpan_nav' role='navigation'>
+        {links.slice(2,4).map((nav,index) =>{
+               return  <NavLink aria-label={nav.name} key={index}  className='rightpan_nav_item' to={'/'+nav.url}>{nav.name}</NavLink>
+            })
+        }
+        </div>
             <CartButton/>
         </div>
         </div>

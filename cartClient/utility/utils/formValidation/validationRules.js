@@ -13,7 +13,7 @@ export default {
   name: {
     confirmPassword: {
       matches: ({ value, get }) => {
-        return (value === get(['userPassword', 'value']));
+        return (value === get(['password', 'value']));
       }
     }
   }

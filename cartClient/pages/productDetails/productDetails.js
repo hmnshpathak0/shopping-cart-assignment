@@ -39,6 +39,7 @@ class ProductDetails extends React.Component{
                 catproducts: state.products.filter(item => props.category.id==item.category),
             }
         }
+        return null
     }
 
     componentDidMount(){

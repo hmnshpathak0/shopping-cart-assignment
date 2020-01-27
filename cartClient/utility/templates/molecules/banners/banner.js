@@ -4,7 +4,7 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import {labelConfig} from '../../../../static/conf/constants';
 import './banner.scss'
 import Slider from '../../atoms/buttons/dotSlider/slider';
-import CustomButton from '../../atoms/buttons/CustomButton/customButton';
+import CustomButton from '../../atoms/buttons/customButton/customButton';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 function Banner(props) {
   const [currentItem, setcurrentItem] = React.useState(0);

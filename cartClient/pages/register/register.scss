@@ -1,0 +1,26 @@
+
+@import '../../utility//theme/style/theme.scss'; 
+.register{
+    display:flex;
+    margin:2em 3em;
+    justify-content: space-evenly;
+    text-align: left;
+    &_desc{
+        padding-top: 3em;
+        span{
+            font-size:1em;
+        }
+    }
+    &_form{
+        width:40%;
+     
+    }
+    @media only screen and (max-width:$screen-tablet){
+        &_desc{
+            display:none;
+        }
+        &_form{
+            width:100%;
+        }
+    }
+}

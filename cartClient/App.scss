@@ -20,7 +20,7 @@
   button{
     outline:0;
     border:none;
-    background: none;
+    cursor: pointer;
   }
 
   .main_container {
@@ -34,7 +34,38 @@
       box-shadow: 0 24px 5px -24px $color-grey-3;
     }
   }
-  h5{
+  input{
+    border: 0;
+    outline: 0;
+    border-bottom: solid 2px $color-grey-1;  
+    &:focus{
+      border-color: $color-blue-1;
+    }
+  }
+
+  form {
+    .eTopIC{
+      margin-top:0.5rem;
+  }
+  .fatWUN{
+      width:80%;
+  }
+  .ibWIVP{
+      border:none;
+      border-bottom:2px solid $color-error;
+     
+  }
+  input[type='submit']{
+     width:69%;
+     color:$color-white-1;
+     background: $color-pink-2; 
+  }
+  input{
+      width:85%;
+  }
+  }
+
+  h5,h3{
     font-weight:bold
   }
 

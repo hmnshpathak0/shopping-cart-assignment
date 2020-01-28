@@ -1,6 +1,7 @@
 @import '../../../../theme/style/theme.scss';
 .header_cartButton{
     flex:1;
+    background: $color-grey-2;
     font-size:1.3em;
     .header_cartNav{
     display: flex;

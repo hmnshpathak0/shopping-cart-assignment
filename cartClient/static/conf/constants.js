@@ -64,6 +64,11 @@ const labelConfig = {
     RightArrow: '>',
     CartBanner: 'Cart Banner',
     CartBannerTitle: 'You will not get cheaper than this',
+    CartPromoCode: 'Promo Code Can be applied on payment page',
+    CartCheckout: 'Cart Checkout',
+    CartPayment: 'Cart Payment',
+    CartProceed: 'Proceed Checkout',
+    Rupee: 'Rs.',
 }
 
 export {

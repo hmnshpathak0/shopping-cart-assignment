@@ -1,6 +1,6 @@
 @import './utility/theme/style/theme.scss';
 
-.app {
+.shoppingApp {
   font-family: $font-family-dosis !important;
   box-sizing: border-box;
   text-align: center;
@@ -10,23 +10,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  ul{
-    list-style: none;
-  }
-  a {
-    text-decoration: none;
-    color: $color-black-1;
-  }
-  button{
-    outline:0;
-    border:none;
-    cursor: pointer;
-  }
-
-  .main_container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  .main-container {
     position: relative;
     width: 100%;
-    min-height: 75vh;
+    height: 100%;
   }
   .line-bottom{
     padding-bottom: 0.5em;
@@ -34,53 +24,69 @@
       box-shadow: 0 24px 5px -24px $color-grey-3;
     }
   }
- 
-  form {
-    .eTopIC{
-      margin:0.3rem 0px;;
-      &:focus-within{
-        label{
-          color: $color-blue-1;
-        }
-      }
-    }
-    .fatWUN{
-      width:80%;
-   }
-    .ibWIVP{
-      border:none;
-      border-bottom:2px solid $color-error;
-     }
-    input[type='submit']{
-     width:69%;
-     margin-top:1.2rem;
-     color:$color-white-1;
-     background: $color-pink-2; 
-     padding:0.5em
-    }
-    input{
-      width:85%;
-      padding:0.3rem;
-      border: 0;
-      outline: 0;
-      border-bottom: solid 2px $color-grey-1;  
-      &:focus{
-        border-color: $color-blue-1;
-      }
-    }
-  }
-
-  h5,h3,h4{
-    font-weight:bold
-  }
-  h4{
-    font-size: 1.5em;
-  }
-
   @media only screen and (max-width:$screen-tablet) {
     font-size:0.7em;
   }
   @media only screen and (min-width:$screen-desktop) {
     padding: 0 5em;
+  }
+}
+
+form {
+  .eTopIC{
+    margin:0.3rem 0px;;
+    &:focus-within{
+      label{
+        color: $color-blue-1;
+      }
+    }
+  }
+  .fatWUN{
+    width:80%;
+ }
+  .ibWIVP{
+    border:none;
+    border-bottom:2px solid $color-error;
+   }
+  input[type='submit']{
+   width:69%;
+   margin-top:1.2rem;
+   color:$color-white-1;
+   background: $color-pink-2; 
+   padding:0.5em
+  }
+  input{
+    width:85%;
+    padding:0.3rem;
+    border: 0;
+    outline: 0;
+    border-bottom: solid 2px $color-grey-1;  
+    &:focus{
+      border-color: $color-blue-1;
+    }
+  }
+}
+body{
+  ul{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    color: $color-black-1;
+    &:hover{
+      text-decoration: none;
+      color:inherit;
+    }
+  }
+  button{
+    outline:0;
+    border:none;
+    cursor: pointer;
+  }
+  h5,h3,h4{
+    font-weight:bold
+  }
+  h4{
+    font-size: 1.5em;
   }
 }

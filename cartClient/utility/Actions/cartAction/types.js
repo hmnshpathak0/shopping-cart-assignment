@@ -6,6 +6,7 @@ const SET_PRODUCTS= 'SET_PRODUCTS';
 const SET_CART_STATUS = 'SET_CART_STATUS';
 const SET_CART = 'SET_CART';
 const DELETE_CART = 'DELETE_CART';
+const MODIFY_CART = 'MODIFY_CART';
 export {
     SET_CATEGORIES,
     GET_BANNERS,
@@ -14,4 +15,5 @@ export {
     SET_CART_STATUS,
     SET_CART,
     DELETE_CART,
+    MODIFY_CART,
 }

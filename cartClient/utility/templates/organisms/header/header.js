@@ -13,19 +13,22 @@ class Header extends React.Component{
             toggle:false,
             height:0,
             loginStatus:'',
+            cartLength:0,
         }
         this.headerElement = React.createRef();
        
     }
 
     static getDerivedStateFromProps(props,state){
+        let updateData={};
         if(props.loginStatus != state.loginStatus){
-            return {
-                loginStatus: props.loginStatus
-            }
+            updateData.loginStatus= props.loginStatus
         }
-        else
-            return null;
+
+        if(props.cart.length && (props.cart.length!=state.cartLength)){
+            updateData.cartLength = props.cart.length;
+        }
+        return Object.keys(updateData).length?updateData:null;
     }
   
     //this method is called to toggle the menu Bar
@@ -73,7 +76,7 @@ class Header extends React.Component{
             })
         }
         </div>
-            <CartButton style={'header_cartButton '+ ((this.state.loginStatus)?'header_cartButton--full':'header_cartButton--stretch')}/>
+            <CartButton total={this.state.cartLength} style={'header_cartButton '+ ((this.state.loginStatus)?'header_cartButton--full':'header_cartButton--stretch')}/>
         </div>
         </div>
         )
@@ -81,7 +84,8 @@ class Header extends React.Component{
 }
 const mapStatetoProps = state => {
     return {
-        loginStatus: state.updateLoginData.loginStatus
+        loginStatus: state.updateLoginData.loginStatus,
+        cart:state.updateData.cart,
     }
 }
 export default connect(mapStatetoProps,null)(Header);

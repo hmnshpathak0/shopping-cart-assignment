@@ -33,9 +33,9 @@ class App extends Component {
     return (
        
       <BrowserRouter>
-       <div className='app'>
+       <div className='shoppingApp'>
       <Header/>
-          <div id='main_container' className='main_container'>
+          <div id='main-container' className='main-container'>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />

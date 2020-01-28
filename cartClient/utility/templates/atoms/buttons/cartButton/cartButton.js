@@ -8,7 +8,7 @@ function CartButton(props) {
     <button aria-label='cartIcon' aria-describedby='cartItems' className={props.style} >
     <NavLink to={'/'+urlConfig.cartcompUrl} className='header_cartNav'>
       <img src='/static/images/cart.svg' alt="Go To Cart"   />
-      <span> {1} Item</span>
+      <span> {props.total} Item</span>
     </NavLink>
     </button>
   );

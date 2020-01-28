@@ -1,4 +1,4 @@
-import {SET_CATEGORIES,GET_BANNERS,DELETE_CART, SAVE_CATEGORY,SET_PRODUCTS,SET_CART,SET_CART_STATUS} from './types'
+import {SET_CATEGORIES,GET_BANNERS,DELETE_CART, MODIFY_CART,SAVE_CATEGORY,SET_PRODUCTS,SET_CART,SET_CART_STATUS} from './types'
 //initail state
 
 const initialState = {
@@ -34,6 +34,13 @@ const updateData = (state = initialState, action) => {
         case DELETE_CART: return Object.assign({}, state, {
             cart: state.cart.filter(item =>payload.id == item.id)
         });
+        case MODIFY_CART: 
+                let index = state.cart.findIndex(item => item.id == action.payload.id);
+                state.cart[index].quantity = action.payload.quantity;
+                return Object.assign({}, state, {
+                    cart: JSON.parse(JSON.stringify(state.cart))
+                });
+
         
         default: return state;
     }

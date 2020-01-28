@@ -8,11 +8,12 @@ const urlConfig = {
     productsUrl: 'products',
     loginUrl:'addToCart',
     registerUrl: 'addToCart',
-    cartcompUrl: 'myCart',
+    cartcompUrl: 'cart',
     productcompUrl: 'plp',
     logincompUrl: 'login',
     registercompUrl: 'register',
     homecompUrl: 'home',
+    cartbannerImageUrl: '/static/images/lowest-price.png',
     
 }
 //all config related to screen size
@@ -53,7 +54,16 @@ const labelConfig = {
     Login: 'Login',
     LoginMessage: 'Get Access to Orders,Whishlist and Recommendation',
     SignIn: 'SignUp',
-    RegisterMessage: 'We dont share any personal details with anyone'
+    RegisterMessage: 'We dont share any personal details with anyone',
+    ReduceQuantity: 'reduce quantity',
+    IncreaseQuantity: 'increase quantity',
+    CartItem: 'Cart Item',
+    Minus: '\u2212',
+    Plus: '+',
+    Multiply: 'x',
+    RightArrow: '>',
+    CartBanner: 'Cart Banner',
+    CartBannerTitle: 'You will not get cheaper than this',
 }
 
 export {

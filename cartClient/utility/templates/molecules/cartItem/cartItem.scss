@@ -1,0 +1,32 @@
+@import '../../../theme/style/theme.scss';
+.cart_item{
+    display:flex;
+    padding: 0.5em;
+    background:$color-white-1;
+    text-align: left;
+    &_image{
+        width:20%;
+    }
+    &_info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+    &_quantity{
+        display:flex;
+        span{
+            font-size: 1.5em;
+            padding: 0.5em;;
+        }
+    }
+    &_btn{
+        background-color: $color-pink-2;
+        border-radius: 0.4em;
+        padding: 0.3em 0.8em;
+        align-self: center;
+        color:$color-white-1;
+        font-size: 1.2em;
+    
+    }
+}

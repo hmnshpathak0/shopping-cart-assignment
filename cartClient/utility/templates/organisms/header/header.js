@@ -3,17 +3,29 @@ import './header.scss';
 import  {NavLink} from 'react-router-dom'
 import CartButton from '../../atoms/buttons/cartButton/cartButton'
 import DropDown from '../../atoms/dropDown/dropdown';
-import links from './links.json'
+import links from './links.json';
+import {connect} from 'react-redux';
 
 class Header extends React.Component{
     constructor(){
         super();
         this.state={
             toggle:false,
-            height:0
+            height:0,
+            loginStatus:'',
         }
         this.headerElement = React.createRef();
        
+    }
+
+    static getDerivedStateFromProps(props,state){
+        if(props.loginStatus != state.loginStatus){
+            return {
+                loginStatus: props.loginStatus
+            }
+        }
+        else
+            return null;
     }
   
     //this method is called to toggle the menu Bar
@@ -52,19 +64,24 @@ class Header extends React.Component{
             })
         }
         </div>
-        <DropDown height={this.state.height} toggle={this.state.toggle}/>
+        <DropDown loginStatus={this.state.loginStatus} height={this.state.height} toggle={this.state.toggle}/>
         </nav>
         <div className='header_rightpan'>
-        <div className='header_rightpan_nav' role='navigation'>
+        <div className={'header_rightpan_nav' +((this.state.loginStatus)?' header_rightpan_nav--hide':' header_rightpan_nav--show')} role='navigation'>
         {links.slice(2,4).map((nav,index) =>{
                return  <NavLink aria-label={nav.name} key={index}  className='rightpan_nav_item' to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>
-            <CartButton/>
+            <CartButton style={'header_cartButton '+ ((this.state.loginStatus)?'header_cartButton--full':'header_cartButton--stretch')}/>
         </div>
         </div>
         )
     }
 }
-export default Header;
+const mapStatetoProps = state => {
+    return {
+        loginStatus: state.updateLoginData.loginStatus
+    }
+}
+export default connect(mapStatetoProps,null)(Header);

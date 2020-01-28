@@ -11,7 +11,7 @@
     },
     {
       "url": "login",
-      "name": "Sign In",
+      "name": "SignIn",
       "component": "Login"
     },
     {

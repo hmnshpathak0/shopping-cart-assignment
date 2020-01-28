@@ -18,10 +18,10 @@
         display:flex;
         min-width: 0;
         align-items: center;
-        flex:0.7
+        flex:0.8
     }
     &_rightpan{
-        flex: 0.3;
+        flex: 0.2;
         display: flex;
         flex-direction:column;
         align-self: stretch;
@@ -64,17 +64,25 @@
                 width:25%;
             }
             &_leftpan{
-                flex:0.8;
+                flex:0.85;
             }
             &_rightpan{
-                flex:0.2;
+                flex:0.15;
                 &_nav{
-                    display:flex;
+                   
                     justify-content: space-evenly;
+                    font-size:0.9em;
+                    &--show{
+                        display:flex;
+                    }
+                    &--hide{
+                        display:none;
+                    }
                 }
             }
             &_nav{
                 display:flex;
+                
             }
     
     }
@@ -87,10 +95,7 @@
             }
             &_rightpan{
                 flex:0.1;
-                &_nav{
-                    display:flex;
-                    justify-content: space-evenly;
-                }
+ 
             }
            
         }

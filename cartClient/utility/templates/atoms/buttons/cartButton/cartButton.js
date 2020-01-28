@@ -5,7 +5,7 @@ import {urlConfig} from '../../../../../static/conf/constants'
 
 function CartButton(props) {
   return (
-    <button aria-label='cartIcon' aria-describedby='cartItems' className='header_cartButton' >
+    <button aria-label='cartIcon' aria-describedby='cartItems' className={props.style} >
     <NavLink to={'/'+urlConfig.cartcompUrl} className='header_cartNav'>
       <img src='/static/images/cart.svg' alt="Go To Cart"   />
       <span> {1} Item</span>

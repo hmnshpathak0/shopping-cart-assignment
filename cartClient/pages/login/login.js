@@ -22,7 +22,7 @@ function Login(props){
                     <span>{labelConfig.LoginMessage}</span>
                 </div>
                 
-                <CustomForm style='login_form'  submit={labelConfig.Login} handler={handleSubmit} formInput={loginForm} />                
+                <CustomForm style='login_form' url={urlConfig.homecompUrl} submit={labelConfig.Login} handler={handleSubmit} formInput={loginForm} />                
             </div>
         )
    

@@ -1,16 +1,26 @@
 @import '../../../../theme/style/theme.scss';
 .header_cartButton{
     flex:1;
+    font-size:1.3em;
     .header_cartNav{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    
     
     img{
         width:30%;
         }
     }
     @media only screen and (min-width:$screen-tablet){
-        flex:0.9;
+        
+        &--stretch{
+            flex:0.9;
+        }   
+        &--full{
+            flex:1;
+        }
+        font-size:1.1em;
     }
+  
 }

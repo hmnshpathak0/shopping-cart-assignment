@@ -22,7 +22,7 @@ function Register(props){
                     <span>{labelConfig.RegisterMessage}</span>
                 </div>
                 
-                <CustomForm style='register_form' submit={labelConfig.SignIn} handler={handleSubmit} formInput={registerForm} />                
+                <CustomForm style='register_form' url={urlConfig.homecompUrl} submit={labelConfig.SignIn} handler={handleSubmit} formInput={registerForm} />                
             </div>
         )
    

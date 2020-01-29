@@ -38,16 +38,30 @@ class App extends Component {
     return Object.keys(update).length?update:null;
   }
 
+  changeScreen = () => {
+    this.setState({
+      screenSize: window.matchMedia('(' + labelConfig.MinWidth + screenConfig.ScreenLaptop + ')').matches
+          ? screenConfig.ScreenLaptop
+          : (window.matchMedia('(' + labelConfig.MinWidth + screenConfig.ScreenTablet + ')').matches
+            ? screenConfig.ScreenTablet : screenConfig.ScreenMobile)
+    })
+  }
+
+  ComponentDidMount(){
+    window.addEventListener('resize',this.changeScreen)
+  }
   
+  componentWillUnmount(){
+    window.removeEventListener('resize',this.changeScreen)
+  }
 
   render() {
     const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
-  
     return (
       <BrowserRouter>
        <div  className={'shoppingApp '+ (isCartOpen?'shoppingApp--light':'')}>
-      <Header screenSize={this.state.screenSize}/>
-          <div id='main-container'  className='main-container'>
+      <Header handleResize={this.changeScreen} screenSize={this.state.screenSize}/>
+          <div   className='shoppingApp_container'>
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} screenSize={this.state.screenSize} />}/>
               <Route exact path="/home" render={(props) => <Home {...props} screenSize={this.state.screenSize} />} />
@@ -58,6 +72,12 @@ class App extends Component {
               <Route component={Home} />
             </Switch>
           </div>
+          { isCartOpen && (
+          <div className='shoppingApp_modal'>
+              <MyCart isModalOpen={isCartOpen} />
+          </div>
+          )
+          }
       </div>    
       </BrowserRouter>
       

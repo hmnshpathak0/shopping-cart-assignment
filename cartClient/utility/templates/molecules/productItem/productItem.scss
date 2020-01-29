@@ -5,10 +5,13 @@
     flex-direction: column;
     padding:0.4em 0;
     width:100%;
-    border-bottom : dashed 0.2em $color-grey-1;
     &_info{
         display:flex;
         justify-content: space-between;
+    }
+    &_action{
+        padding-bottom: 0.5em;
+        border-bottom : dashed 0.2em $color-grey-1;
     }
     &_image{
         width:50%;
@@ -28,7 +31,7 @@
         overflow: hidden;
    
     }
-    .product_item_btn{
+    &_btn{
             background: $color-pink-2;
             color:$color-white-1;
             align-self: stretch;
@@ -38,12 +41,22 @@
         text-align:left;
     }
     @media only screen and (min-width:$screen-tablet){
+        background-image: linear-gradient(45deg, $color-black-4, $color-grey-7);
+        background-repeat: no-repeat;
+        background-size: 2px 75%, calc(100% - 1px) 100%;
+        background-position: right top,1px 0;
+        padding: 0 1em;
+        margin-top: 1em;
         width:49%;
         max-height:42vw;
+        &_btn{
+            width: 100%;
+        }
         &_desc{
-           height:25vw;
-           
-            
+           height:25vw;            
+        }
+        &:nth-of-type(2n){
+            background: none;
         }
         &_title{
             min-height:7.2vw;
@@ -60,14 +73,16 @@
         
     }
     @media only screen and (min-width:$screen-desktop){
-        width:24%;
-        padding: 1em;
+        width:25%;
         max-height:35vw;
         &_desc{
            height:5vw;
            margin-top: 0.4em;
            font-size:0.7em;
-            
+        
+        }
+        &:nth-of-type(4n){
+            background: none;
         }
         &_image{
             width:100%;

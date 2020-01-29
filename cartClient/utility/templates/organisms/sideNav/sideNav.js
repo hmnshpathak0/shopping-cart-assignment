@@ -4,8 +4,6 @@ import {labelConfig} from '../../../../static/conf/constants';
 import CustomButton from '../../atoms/buttons/customButton/customButton';
 import {SAVE_CATEGORY} from  '../../../Actions/cartAction/types'
 function SideNav(props){
-    const [category,setCategory] = React.useState({});
-
     //this method set the category selected
     const selectCategory = cat => {
         props.saveData(cat)

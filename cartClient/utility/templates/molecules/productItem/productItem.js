@@ -37,7 +37,9 @@ class ProductItem extends React.Component{
                     <img alt={item.name} className='product_item_image' src={item.imageURL}/>
                     <figcaption title={item.description} className='product_item_desc'>{item.description}</figcaption>
                 </figure>
+                <div className='product_item_action'>
             <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
+                </div>
                 </React.Fragment>
             )
              : (
@@ -46,8 +48,7 @@ class ProductItem extends React.Component{
                 <img alt={item.name} className='product_item_image' src={item.imageURL}/>
                 <div className='product_item_content'>
                 <figcaption className='product_item_desc' title={item.description}>{item.description}</figcaption>
-                <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
-                </div>
+                <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>                </div>
             </figure>
             </React.Fragment>
              

@@ -18,8 +18,9 @@ const urlConfig = {
 }
 //all config related to screen size
 const screenConfig= {
-    ScreenTablet:'481px', /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    ScreenLaptop:'800px',
+    ScreenTablet:'465px', /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    ScreenMobile: '300px',
+    ScreenLaptop:'900px',
     ScreenDesktop:'1025px', /* big landscape tablets, laptops, and desktops */
 }
 
@@ -74,6 +75,8 @@ const labelConfig = {
     CartEmptyMessage: 'No Item in your Cart',
     CartEmptyPromo: 'Your favourite items are just a click away',
     CartEmptyButtonText: 'Start Shopping',
+    CloseCart: 'CloseCart',
+    CloseCartButton: 'Close Cart Button'
 }
 
 export {

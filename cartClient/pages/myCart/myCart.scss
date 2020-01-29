@@ -4,11 +4,24 @@
     background: $color-grey-1;
     padding-top:3.5em;
     font-weight: 600;
-    position: relative;
     height: 100%;
     display: flex;
     width: 100%;
     flex-direction: column;
+    position: relative;
+    &_details{
+        position: relative;
+        height: 100%;
+    }
+    &_close{
+        display: none;
+        position: absolute;
+        font-size: x-large;
+        background: none;
+        right: 0;
+        color:$color-white-1;
+        align-self: center;
+    }
     &_empty{
         margin-top: 40%;
     }
@@ -37,11 +50,14 @@
     }
     &_items{
         display: flex;
+        position: relative;
         flex-direction: column;
+        max-height: 60%;
+        overflow: scroll;
     }
     &_banner{
         display:flex;
-        margin: 0 0.5em;
+        margin: 1rem 0.5rem;
         align-items: center;
         font-size: 1.2em;
         &_img{
@@ -90,15 +106,21 @@
     @media only screen and (min-width:$screen-laptop){
         position:absolute;
         z-index:1000;
-        top: 10vh;
-        height: 75vh;
+        bottom: 0;
+        height: 80vh;
         right: 10vw;
         padding-top:0;
-        width:40%;
+        width:50%;
         font-size: smaller;
+        &_items{
+            max-height: 65%;
+        }
         &_desc{
             background: $color-black-1;
             color: $color-white-1;
+        }
+        &_close{
+            display: block;
         }
         &_font{
             padding: 0.1em;

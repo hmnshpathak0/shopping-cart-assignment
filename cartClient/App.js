@@ -1,45 +1,57 @@
 
   
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './App.scss';
 import {
   BrowserRouter,
   Switch, Route
 } from "react-router-dom";
 import Login from './pages/login/login';
-import {links} from './utility/templates/organisms/header/links.json'
 import Header from './utility/templates/organisms/header/header';
 import Home from './pages/home/home';
-import {Provider} from 'react-redux';
-import {store} from './store';
-import { FormProvider } from 'react-advanced-form';
-import rules from './utility/utils/formValidation/validationRules';
-import messages from './utility/utils/formValidation/validationMessage'
+import {connect} from 'react-redux';
 import ProductDetails from './pages/productDetails/productDetails';
 import Register from './pages/register/register';
 import MyCart from './pages/myCart/myCart';
+import {screenConfig,labelConfig} from './static/conf/constants';
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      
-    };
+        screenSize: window.matchMedia('(' + labelConfig.MinWidth + screenConfig.ScreenLaptop + ')').matches
+          ? screenConfig.ScreenLaptop
+          : (window.matchMedia('(' + labelConfig.MinWidth + screenConfig.ScreenTablet + ')').matches
+            ? screenConfig.ScreenTablet : screenConfig.ScreenMobile),
+        cartOpen:false,
+     
+          };
   } 
 
+  static getDerivedStateFromProps(props,state){
+    let update = {};
+    if(props.cartOpen != state.cartOpen){
+        update.cartOpen = props.cartOpen;
+    }
+
+    return Object.keys(update).length?update:null;
+  }
+
+  
+
   render() {
+    const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
+  
     return (
-       
       <BrowserRouter>
-       <div className='shoppingApp'>
-      <Header/>
-          <div id='main-container' className='main-container'>
+       <div  className={'shoppingApp '+ (isCartOpen?'shoppingApp--light':'')}>
+      <Header screenSize={this.state.screenSize}/>
+          <div id='main-container'  className='main-container'>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/plp" component={ProductDetails} />
+              <Route exact path="/" render={(props) => <Home {...props} screenSize={this.state.screenSize} />}/>
+              <Route exact path="/home" render={(props) => <Home {...props} screenSize={this.state.screenSize} />} />
+              <Route exact path="/plp"  render={(props) => <ProductDetails {...props} screenSize={this.state.screenSize} />} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/cart" component={MyCart} />
@@ -54,6 +66,10 @@ class App extends Component {
   }
 }
 
-ReactDOM.render( <Provider store={store}>
-  <FormProvider rules={rules} messages={messages}><App /></FormProvider>
-</Provider>, document.getElementById('app'));
+const mapStateToProps= state =>  {
+  return {
+  cartOpen: state.updateData.cartOpen,
+  }
+}
+
+export default connect(mapStateToProps,null)(App);

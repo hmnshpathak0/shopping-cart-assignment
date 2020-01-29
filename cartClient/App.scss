@@ -13,6 +13,9 @@
   position: absolute;
   height: 100vh;
   width: 100vw;
+  &--light{
+    overflow: hidden;
+  }
   .main-container {
     position: relative;
     width: 100%;

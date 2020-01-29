@@ -19,7 +19,7 @@ const urlConfig = {
 //all config related to screen size
 const screenConfig= {
     ScreenTablet:'481px', /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    ScreenLaptop:'700px',
+    ScreenLaptop:'800px',
     ScreenDesktop:'1025px', /* big landscape tablets, laptops, and desktops */
 }
 
@@ -57,6 +57,8 @@ const labelConfig = {
     RegisterMessage: 'We dont share any personal details with anyone',
     ReduceQuantity: 'reduce quantity',
     IncreaseQuantity: 'increase quantity',
+    MaxWidth: 'max-width:',
+    MinWidth: 'min-width:',
     CartItem: 'Cart Item',
     Minus: '\u2212',
     Plus: '+',
@@ -69,6 +71,9 @@ const labelConfig = {
     CartPayment: 'Cart Payment',
     CartProceed: 'Proceed Checkout',
     Rupee: 'Rs.',
+    CartEmptyMessage: 'No Item in your Cart',
+    CartEmptyPromo: 'Your favourite items are just a click away',
+    CartEmptyButtonText: 'Start Shopping',
 }
 
 export {

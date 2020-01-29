@@ -1,17 +1,35 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink,withRouter} from 'react-router-dom';
+import {connect} from 'react-redux'
 import './CartButton.scss';
-import {urlConfig} from '../../../../../static/conf/constants'
+import {screenConfig,urlConfig} from '../../../../../static/conf/constants';
+import {CART_OPEN_STATUS} from '../../../../Actions/cartAction/types'
 
 function CartButton(props) {
+  const handleCartClick = () => {
+      if(props.screenSize!=screenConfig.ScreenLaptop){
+          props.history.push('/'+urlConfig.cartcompUrl);
+      }else{
+          props.updateCartOpen();
+      }
+
+  }
   return (
-    <button aria-label='cartIcon' aria-describedby='cartItems' className={props.style} >
-    <NavLink to={'/'+urlConfig.cartcompUrl} className='header_cartNav'>
+    <button onClick={handleCartClick} aria-label='cartIcon' aria-describedby='cartItems' className={props.style} >
+    <a  className='header_cartNav'>
       <img src='/static/images/cart.svg' alt="Go To Cart"   />
       <span> {props.total} Item</span>
-    </NavLink>
+    </a>
     </button>
   );
 }
 
-export default CartButton;
+const mapDispatcherToProps = dispatch => {
+  return {
+    updateCartOpen: () => dispatch({
+      type: CART_OPEN_STATUS,
+      payload: true
+    })
+  }
+}
+export default withRouter(connect(null,mapDispatcherToProps)(CartButton));

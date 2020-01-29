@@ -4,6 +4,7 @@ import  {NavLink} from 'react-router-dom'
 import CartButton from '../../atoms/buttons/cartButton/cartButton'
 import DropDown from '../../atoms/dropDown/dropdown';
 import links from './links.json';
+import {screenConfig} from '../../../../static/conf/constants';
 import {connect} from 'react-redux';
 
 class Header extends React.Component{
@@ -14,6 +15,8 @@ class Header extends React.Component{
             height:0,
             loginStatus:'',
             cartLength:0,
+            cartOpen:false,
+
         }
         this.headerElement = React.createRef();
        
@@ -28,6 +31,11 @@ class Header extends React.Component{
         if(props.cart.length && (props.cart.length!=state.cartLength)){
             updateData.cartLength = props.cart.length;
         }
+        if(props.screenSize != state.screenSize){
+            updateData.screenSize = props.screenSize;
+        }
+        if(props.cartOpen != state.cartOpen)
+            updateData.cartOpen = props.cartOpen
         return Object.keys(updateData).length?updateData:null;
     }
   
@@ -39,12 +47,14 @@ class Header extends React.Component{
         if(!this.state.toggle && this.state.height!=this.headerElement.current.clientHeight)
             this.setState({height:this.headerElement.current.clientHeight})
     }
-    updateDimensions = () => {
-        if(this.state.toggle && this.state.height!=this.headerElement.current.clientHeight)
+    updateDimensions = () => {   
+        if(this.state.toggle && this.state.height!=this.headerElement.current.clientHeight){
             this.setState({height:this.headerElement.current.clientHeight})
+        }
     }
     //Calling the componentDidMount life cycle
     componentDidMount(){
+        this.setState({height:this.headerElement.current.clientHeight})
         //adding event for resize responsiveness
         window.addEventListener('resize', this.updateDimensions);
 
@@ -55,7 +65,7 @@ class Header extends React.Component{
     render(){
         
         return(
-        <div ref={this.headerElement} className='header'>
+        <div ref={this.headerElement} className={'header '+ ((this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen )?'header--light':'')}>
         <nav role="navigation" className='header_leftpan'>
         <img className='header_logo' title='sabka Bazaar' alt='sabka Bazaar'/>
         <button className='header_iconBtn' aria-label='Menu Bar' aria-controls='navigation links'> 
@@ -76,7 +86,7 @@ class Header extends React.Component{
             })
         }
         </div>
-            <CartButton total={this.state.cartLength} style={'header_cartButton '+ ((this.state.loginStatus)?'header_cartButton--full':'header_cartButton--stretch')}/>
+            <CartButton screenSize={this.state.screenSize}  total={this.state.cartLength} style={'header_cartButton '+ ((this.state.loginStatus)?'header_cartButton--full':'header_cartButton--stretch')}/>
         </div>
         </div>
         )

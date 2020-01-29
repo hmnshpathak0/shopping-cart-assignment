@@ -1,4 +1,4 @@
-import {SET_CATEGORIES,GET_BANNERS,DELETE_CART, MODIFY_CART,SAVE_CATEGORY,SET_PRODUCTS,SET_CART,SET_CART_STATUS} from './types'
+import {SET_CATEGORIES,GET_BANNERS,DELETE_CART,CART_OPEN_STATUS ,MODIFY_CART,SAVE_CATEGORY,SET_PRODUCTS,SET_CART,SET_CART_STATUS} from './types'
 //initail state
 
 const initialState = {
@@ -7,6 +7,7 @@ const initialState = {
     category:{},
     products:[],
     cart: [],
+    cartOpen: false
 };
 
 
@@ -33,6 +34,9 @@ const updateData = (state = initialState, action) => {
         });
         case DELETE_CART: return Object.assign({}, state, {
             cart: state.cart.filter(item =>payload.id == item.id)
+        });
+        case CART_OPEN_STATUS: return Object.assign({}, state, {
+            cartOpen: action.payload
         });
         case MODIFY_CART: 
                 let index = state.cart.findIndex(item => item.id == action.payload.id);

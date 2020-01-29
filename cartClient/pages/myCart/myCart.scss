@@ -6,20 +6,34 @@
     font-weight: 600;
     position: relative;
     height: 100%;
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    &_empty{
+        margin-top: 40%;
+    }
+    &_font{
+        padding: 0.2em;
+        &--small{
+            font-size: small;
+        }
+        &--medium{
+            font-size: medium;
+        }
+        &--xlarge{
+            font-size: x-large;
+        }
+        &--large{
+            font-size: large;
+        }
+    }
     &_desc{
         background: $color-white-1;
-        margin-bottom:2em;
-        padding:1em;
+        margin-bottom:1rem;
+        padding:0.5em;
         display:flex;
         align-items: baseline;
-    h3{
-        font-size:x-large;
-    }
-     span{
-         font-size:large;
-         padding-left: 0.3em;
-        }   
+ 
     }
     &_items{
         display: flex;
@@ -27,7 +41,7 @@
     }
     &_banner{
         display:flex;
-        margin: 0.5em;
+        margin: 0 0.5em;
         align-items: center;
         font-size: 1.2em;
         &_img{
@@ -36,10 +50,33 @@
         }
         background-color: $color-white-1;
     }
+    &_emptyDesc{
+        margin-top: 30%;
+    }
+    &_btn{
+        background: $color-pink-2;
+        color:$color-white-1;
+        align-self: stretch;
+        display: flex;
+        font-size: medium;
+        justify-content: space-evenly;
+        &--empty{
+            height: 8%;
+            width: 80%;
+            position: absolute;
+            margin: 1em auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        &--full{
+            height: 45%;
+        }
+    }
     &_checkout{
         bottom:0;
         width: 100%;
-        height: 10%;
+        height: 15%;
         justify-content: space-evenly;
         background:$color-white-1;
         display: flex;
@@ -48,14 +85,27 @@
         position: absolute;
         padding: 0 2em;
         font-size:small;
-        &_btn{
-            background: $color-pink-2;
-            color:$color-white-1;
-            align-self: stretch;
-            display: flex;
-            font-size: medium;
-            justify-content: space-evenly;
-            height: 40%;
+        
+    }
+    @media only screen and (min-width:$screen-laptop){
+        position:absolute;
+        z-index:1000;
+        top: 10vh;
+        height: 75vh;
+        right: 10vw;
+        padding-top:0;
+        width:40%;
+        font-size: smaller;
+        &_desc{
+            background: $color-black-1;
+            color: $color-white-1;
         }
+        &_font{
+            padding: 0.1em;
+            &--xlarge{
+            font-size: large;
+        }
+    }
+        
     }
 }

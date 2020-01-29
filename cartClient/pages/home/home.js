@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {fetchData} from  '../../utility/Actions/cartAction/action';
-import {urlConfig,labelConfig} from '../../static/conf/constants';
-import {compareFields} from '../../utility/utils/utils';
+import {urlConfig,screenConfig,labelConfig} from '../../static/conf/constants';
 import '../../utility/templates/molecules/banners/banner'
 import Banner from '../../utility/templates/molecules/banners/banner';
 import ShowCategory from '../../utility/templates/molecules/showCategory/showCategory';
 import './home.scss';
+import MyCart from '../myCart/myCart';
 
 class Home extends Component{
     constructor(){
@@ -14,44 +14,28 @@ class Home extends Component{
         this.state={
             categories: [],
             banners: [],
+            screenSize: '',
+            cartOpen: false,
         }
 
     }
     //if all the values are same then return false
     static getDerivedStateFromProps(props,state){
-        console.log(props.category)
-         let bannerFlag = false;
-         let categoriesFlag = false;
+        let update={}
+        if(props.banners.length && !state.banners.length){
+            update.banners = props.banners;
+        }
         
-        if(!state.banners.length){
-            bannerFlag = true
-        }else if(state.banners.length && compareFields(props.banners,state.banners)){
-            bannerFlag = true
+        if(props.categories.length && !state.categories.length){
+            update.categories = props.categories;
         }
-
-        if(!state.categories.length){
-            categoriesFlag = true
-         }else if(state.categories.length && compareFields(props.categories,state.categories)){
-             categoriesFlag = true
-         }
-         //returning the values if change is there
-        if(bannerFlag){
-            if(categoriesFlag){
-                return {
-                    categories:props.categories,
-                    banners: props.banners
-                }
-            }else{
-               return{ 
-                   banners: props.banners,
-               }
-            }
-        }else if(categoriesFlag){
-            return{
-                categories: props.categories
-            }
+        if(props.screenSize && props.screenSize!=state.screenSize){
+            update.screenSize = props.screenSize;
         }
-        return null;
+        if(props.cartOpen != state.cartOpen)
+            update.cartOpen = props.cartOpen
+    
+        return Object.keys(update).length?update:null;
     }
   
     componentDidMount(){
@@ -59,8 +43,11 @@ class Home extends Component{
         this.props.fetchData(urlConfig.bannersUrl);
     }
     render(){
+        const isCartModal = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen
+
         return (
-            <main className='home' aria-label={labelConfig.Home}>
+            <React.Fragment>
+            <main className={'home '+ (isCartModal?'home--light':'')} aria-label={labelConfig.Home}>
               <Banner banner={this.state.banners} />
             <section className='home_cat'>
                 {this.state.categories.map((cat,index) => 
@@ -70,6 +57,11 @@ class Home extends Component{
             </section>
               
             </main>
+            {
+               isCartModal &&  <MyCart/>
+
+            }
+            </React.Fragment>
           );
         }
 }
@@ -77,6 +69,7 @@ const mapStateToProps = (state) => {
     return {
       categories: state.updateData.categories,
       banners: state.updateData.banners,
+      cartOpen: state.updateData.cartOpen,
     }
   }
   export default connect(mapStateToProps, { fetchData })(Home);

@@ -63,9 +63,9 @@ class App extends Component {
       <Header handleResize={this.changeScreen} screenSize={this.state.screenSize}/>
           <div   className='shoppingApp_container'>
             <Switch>
-              <Route exact path="/" render={(props) => <Home {...props} screenSize={this.state.screenSize} />}/>
-              <Route exact path="/home" render={(props) => <Home {...props} screenSize={this.state.screenSize} />} />
-              <Route exact path="/plp"  render={(props) => <ProductDetails {...props} screenSize={this.state.screenSize} />} />
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/home" component={Home} />} />
+              <Route exact path="/plp"  component={ProductDetails}/>} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/cart" component={MyCart} />

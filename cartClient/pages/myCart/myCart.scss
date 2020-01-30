@@ -86,18 +86,16 @@
             right: 0;
         }
         &--full{
-            height: 45%;
+            height: 25%;
+            margin: 0.5em auto;
+            width: 100%;
         }
     }
     &_checkout{
         bottom:0;
         width: 100%;
-        height: 15%;
-        justify-content: space-evenly;
+        height: 17%;
         background:$color-white-1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         position: absolute;
         padding: 0 2em;
         font-size:small;
@@ -107,13 +105,47 @@
         position:absolute;
         z-index:1000;
         bottom: 0;
-        height: 80vh;
+        height: 88vh;
         right: 10vw;
         padding-top:0;
-        width:50%;
+        width:40%;
         font-size: smaller;
         &_items{
-            max-height: 65%;
+            max-height: 58%;
+        }
+        &_checkout{
+            bottom:0;
+            width: 100%;
+            height: 13%;
+            justify-content: space-evenly;
+            background:$color-white-1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            padding: 0 2em;
+            font-size:small;
+            
+        }
+        &_btn{
+            background: $color-pink-2;
+            color:$color-white-1;
+            align-self: stretch;
+            display: flex;
+            font-size: medium;
+            justify-content: space-evenly;
+            &--empty{
+                height: 8%;
+                width: 80%;
+                position: absolute;
+                margin: 1em auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            &--full{
+                height: 45%;
+            }
         }
         &_desc{
             background: $color-black-1;
@@ -129,5 +161,14 @@
         }
     }
         
+    }
+    @media only screen and (min-height:$itab-height){
+        height: 70vh;
+        &_items{
+            max-height:65%;
+        }
+        &_checkout{
+            height: 10%;
+        }
     }
 }

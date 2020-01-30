@@ -11,7 +11,7 @@ function SideNav(props){
     return(
         <React.Fragment>
              {
-                       props.categories.map(item =>  <CustomButton styleClass='cat_menu_btn' key={item.id} val={item} aria-labels={labelConfig.CatNav} aria-controls={labelConfig.Products} handler={selectCategory} key={item.id} text={item.name}/>)
+                       props.categories.map(item =>  <div key={item.id} className='cat_menu_action'><CustomButton styleClass='cat_menu_btn'  val={item} aria-labels={labelConfig.CatNav} aria-controls={labelConfig.Products} handler={selectCategory} key={item.id} text={item.name}/></div>)
             }
         </React.Fragment>
     )

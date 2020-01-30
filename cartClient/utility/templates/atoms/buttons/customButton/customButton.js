@@ -9,7 +9,7 @@ function CustomButton(props){
     return (
         <button aria-label={props.label||'none'} onClick={handleClick} aria-controls={props.control || ''} className={props.styleClass||''}>
         {
-            !props.rightText?(props.text||''):(
+            !props.rightText?(props.children?props.children:(props.text||'')):(
                 <React.Fragment>
                 <span>{props.text||''}</span>
                 <span>{props.rightText}</span>

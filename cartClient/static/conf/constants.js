@@ -14,6 +14,8 @@ const urlConfig = {
     registercompUrl: 'register',
     homecompUrl: 'home',
     cartbannerImageUrl: '/static/images/lowest-price.png',
+    logoImageUrlSmall: '/static/images/logo.png',
+    logoImageUrlLarge: '/static/images/logo_2x.png',
     
 }
 //all config related to screen size

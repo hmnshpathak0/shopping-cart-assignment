@@ -48,7 +48,7 @@ class MyCart extends React.Component{
                     <React.Fragment>
                         <div className='cart_details'>
                         <div className='cart_desc'>
-                    <h3 className='cart_font cart_font--xlarge'>My Cart </h3>
+                    <h3 className='cart_font cart_font--xlarge'>{labelConfig.MyCart} </h3>
                     <span className='cart_font cart_font--medium'>{'('+this.state.cart.length+' item)'}</span>
                     {
                         this.state.isModalOpen && (

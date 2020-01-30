@@ -25,7 +25,6 @@ class ProductDetails extends React.Component{
 
     //mapping the props to state
     static getDerivedStateFromProps(props,state){
-        console.log(props.cart)
         let update = {};
         if(!state.categories.length && props.categories.length){
             update.categories = props.categories;

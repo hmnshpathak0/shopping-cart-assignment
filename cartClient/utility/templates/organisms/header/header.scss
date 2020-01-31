@@ -3,7 +3,6 @@
 .header{
     display:flex;
     flex-direction:row;
-    width:100%;
     align-items: center;
     box-shadow: 0 0 3.1vw 0 $color-grey-2;
     
@@ -45,6 +44,7 @@
             margin:auto;
         }
         &_item{
+            font-size: large;
             padding:0.8rem;
             display:inline-block;
             cursor:pointer;
@@ -101,5 +101,11 @@
             }
            
         }
+        @media only screen and (min-width:$screen-desktop) {
+            &_logo{
+                width:15%;
+           
+        }
+    }
     
 }

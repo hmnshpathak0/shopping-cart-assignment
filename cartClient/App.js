@@ -14,6 +14,7 @@ import ProductDetails from './pages/productDetails/productDetails';
 import Register from './pages/register/register';
 import MyCart from './pages/myCart/myCart';
 import {screenConfig,labelConfig} from './static/conf/constants';
+import Footer from './utility/templates/organisms/footer/footer';
 
 
 class App extends Component {
@@ -47,14 +48,6 @@ class App extends Component {
     })
   }
 
-  ComponentDidMount(){
-    window.addEventListener('resize',this.changeScreen)
-  }
-  
-  componentWillUnmount(){
-    window.removeEventListener('resize',this.changeScreen)
-  }
-
   render() {
     const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
     return (
@@ -77,6 +70,9 @@ class App extends Component {
               <MyCart isModalOpen={isCartOpen} />
           </div>
           )
+          }
+         {
+          !this.state.cartOpen &&  <Footer/> 
           }
       </div>    
       </BrowserRouter>

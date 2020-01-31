@@ -7,11 +7,10 @@ import {CART_OPEN_STATUS} from '../../../../Actions/cartAction/types'
 
 function CartButton(props) {
   const handleCartClick = () => {
-      console.log(props.screenSize)
+      props.updateCartOpen();
       if(props.screenSize!=screenConfig.ScreenLaptop){
+
           props.history.push('/'+urlConfig.cartcompUrl);
-      }else{
-          props.updateCartOpen();
       }
 
   }

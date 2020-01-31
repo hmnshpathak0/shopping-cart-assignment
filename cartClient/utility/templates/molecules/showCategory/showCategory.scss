@@ -18,6 +18,12 @@
         &_btn{
             background: $color-pink-2;
             color:$color-white-1;
+            padding: 0.4em;
+        }
+    }
+    @media only screen and (min-width: $screen-tablet){
+        .cat_image{
+            width:25%;
         }
     }
 }

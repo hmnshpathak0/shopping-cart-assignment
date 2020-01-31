@@ -78,7 +78,8 @@ const labelConfig = {
     CartEmptyPromo: 'Your favourite items are just a click away',
     CartEmptyButtonText: 'Start Shopping',
     CloseCart: 'CloseCart',
-    CloseCartButton: 'Close Cart Button'
+    CloseCartButton: 'Close Cart Button',
+    FooterMsg: 'CopyRight@ 2011-2018 Sabka Bazaar Groceries Supply Private Limited '
 }
 
 export {

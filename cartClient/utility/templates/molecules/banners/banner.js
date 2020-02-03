@@ -29,7 +29,7 @@ function Banner(props) {
     aria-live='off'>
     {props.banner.map((item, index) => (
       <div className="home_banner_item" key={item.id} role='group'
-        aria-label={(index + 1)} id='bannerSlide'>
+        aria-label={(index + 1)} >
           <figure>
             <img className='home_banner_image' src={item.bannerImageUrl} alt={item.bannerImageAlt} />
           </figure>

@@ -22,7 +22,7 @@ function CartItem(props){
         <figure className='cart_item'>
              <img alt={item.name} className='cart_item_image' src={item.imageURL}/>
              <div className='cart_item_info'>
-             <figcaption title={item.name} className='cart_item_title'><h4 className='cart_font--medium'>{item.name}</h4></figcaption>
+             <figcaption title={item.name} className='cart_item_title'><h4 className='cart_font--large'>{item.name}</h4></figcaption>
              <div className='cart_item_quantity'>
                 <CustomButton text={labelConfig.Minus} styleClass='cart_item_btn'  label={labelConfig.ReduceQuantity} control={labelConfig.CartItem} handler={reduceItem}/>
                 <span>{item.quantity}</span>

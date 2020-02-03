@@ -33,9 +33,6 @@
         color: $color-pink-2;
         background: none;
         outline: 0;
-        &:focus{
-            outline: none;
-        }
     }
     &_nav{
         display:none;

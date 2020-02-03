@@ -15,7 +15,7 @@ function CartButton(props) {
 
   }
   return (
-    <button onClick={handleCartClick} aria-label='cartIcon' aria-describedby='cartItems' className={props.style} >
+    <button onClick={handleCartClick} aria-label='cartIcon'  className={props.style} >
     <a  className='header_cartNav'>
       <img src='/static/images/cart.svg' alt="Go To Cart"   />
       <span> {props.total} Item</span>

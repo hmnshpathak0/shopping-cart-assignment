@@ -17,6 +17,7 @@ class ProductDetails extends React.Component{
             catproducts: [],
             cart:[],
             cartStatus:'',
+            sameCat: false,
 
         }
     }
@@ -29,28 +30,29 @@ class ProductDetails extends React.Component{
         if(!state.categories.length && props.categories.length){
             update.categories = props.categories;
         }
-
-        if(!Object.keys(state.category).length && Object.keys(props.category).length){
-            update.category = props.category;
-            if(state.products.length){
-                update.catproducts = props.products.filter(item => props.category.id==item.category)
-            }
-        }
+    
+        
         
         if(!state.products.length && props.products.length){
             update.products = props.products;
             update.catproducts = props.products;
         }
         
-        if(props.category.id && props.category.id!=state.category.id){
-            update.catproducts = props.products.filter(item => props.category.id==item.category);
-            if(props.cart.length){
-                update.cart = props.cart;
-            }
+        if(props.cart.length){
+            update.cart = props.cart;
         }
 
-        
-            update.cart = props.cart;
+        if(Object.keys(props.category).length){
+            if(Object.keys(state.category).length && props.category.id == state.category.id){
+                update.catproducts = props.products;
+                return Object.keys(update).length?update:null;
+            }
+            update.category = props.category;
+            update.catproducts = props.products.filter(item => item.category==props.category.id);
+        }else{
+            update.category= props.category;
+            update.catproducts = props.products;
+        }
 
         return Object.keys(update).length?update:null;
     }
@@ -74,16 +76,24 @@ class ProductDetails extends React.Component{
     
     }
 
+    toggleCatFlag = flag => {
+        this.setState({sameCat:flag})
+    }
+
+    //adding the product item to cart if it doesnt exist in cart
     addToCart = (item) => {
-        const cartItem = Object.assign({},item)
-        cartItem.quantity = 1;
-        this.props.addItem(cartItem)
+        let product = this.state.cart.find(prod => prod.id == item.id)
+        if(!product){
+            const cartItem = Object.assign({},item)
+            cartItem.quantity = 1;
+            this.props.addItem(cartItem)
+        }
     }
     render(){
         return(
             <main className='cat_products'>
                 <aside className='cat_menu'>
-                    <SideNav categories={this.state.categories} />
+                    <SideNav cat={this.props.category} sameCat={this.state.sameCat} handler={this.toggleCatFlag} categories={this.state.categories} />
                 </aside>
                 <div className='cat_dropdown_div'> 
                 <CatMenu category={this.state.category} categories={this.state.categories}/>

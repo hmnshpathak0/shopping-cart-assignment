@@ -72,8 +72,8 @@ class Header extends React.Component{
         <img className='header_logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
      sizes="(max-width: 600px) 480px,
             800px"   src={urlConfig.logoImageUrlSmall} alt='sabka Bazaar'/>
-        <button className='header_iconBtn' aria-label='Menu Bar' aria-controls='navigation links'> 
-            <i title='Menu bar'  role="navigation" onClick={this.toggleMenu} aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
+        <button className='header_iconBtn' onClick={this.toggleMenu} aria-label='Menu Bar' aria-controls='header_dropdown'> 
+            <i title='Menu bar'  role="navigation"  aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
         </button>
         <div className='header_nav'>
             {links.slice(0,2).map((nav,index) =>{

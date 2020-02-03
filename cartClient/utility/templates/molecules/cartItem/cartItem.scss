@@ -20,7 +20,7 @@
     &_quantity{
         display:flex;
         span{
-            font-size: 1.5em;
+            font-size: medium;
             padding: 0.5em;;
         }
 
@@ -28,13 +28,22 @@
     &_btn{
         background-color: $color-pink-2;
         border-radius: 0.4em;
-        padding: 0.3em 0.8em;
+        padding: 0 0.5em;
         align-self: center;
         color:$color-white-1;
         font-size: 1.2em;
     
     }
+    @media only screen and (min-width:$screen-tablet){
+        &_image{
+            width:10%;
+        }
+         
+     }
     @media only screen and (min-width:$screen-laptop){
+        &_image {
+            width: 20%;
+        }
        &_btn{
             font-size: smaller;
        }

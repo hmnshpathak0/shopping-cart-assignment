@@ -101,9 +101,6 @@ body{
     outline:0;
     border:none;
     cursor: pointer;
-    &:focus{
-      outline: none;
-    }
   }
   h5,h3,h4{
     font-weight:bold

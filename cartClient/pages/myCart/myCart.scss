@@ -109,7 +109,7 @@
         width:40%;
         font-size: smaller;
         &_items{
-            max-height: 65%;
+            max-height: 80%;
         }
         &_checkout{
             bottom:0;
@@ -163,8 +163,14 @@
     }
         
     }
+    @media only screen and (min-width: $screen-desktop){
+        width: 30%;
+    }
     @media only screen and (min-height:$itab-height){
         height: 70vh;
+        &_items{
+            max-height: 75%;
+        }
         &_checkout{
             height: 10%;
         }

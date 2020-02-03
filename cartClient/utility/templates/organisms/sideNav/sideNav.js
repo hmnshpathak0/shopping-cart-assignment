@@ -4,9 +4,14 @@ import {labelConfig} from '../../../../static/conf/constants';
 import CustomButton from '../../atoms/buttons/customButton/customButton';
 import {SAVE_CATEGORY} from  '../../../Actions/cartAction/types'
 function SideNav(props){
-    //this method set the category selected
+    //this method set the category selected 
     const selectCategory = cat => {
-        props.saveData(cat)
+        if(props.cat.id && props.cat.id == cat.id){
+            props.saveData({})     
+        }
+        else{
+            props.saveData(cat);
+        }
     }
     return(
         <React.Fragment>

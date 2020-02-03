@@ -52,9 +52,9 @@ class App extends Component {
     const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
     return (
       <BrowserRouter>
-       <div  className={'shoppingApp '+ (isCartOpen?'shoppingApp--light':'')}>
+       <div  className={'app '+ (isCartOpen?'app--light':'')}>
       <Header handleResize={this.changeScreen} screenSize={this.state.screenSize}/>
-          <div   className='shoppingApp_container'>
+          <div   className='app_container'>
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/home" component={Home} />} />
@@ -66,7 +66,7 @@ class App extends Component {
             </Switch>
           </div>
           { isCartOpen && (
-          <div className='shoppingApp_modal'>
+          <div className='app_modal'>
               <MyCart isModalOpen={isCartOpen} />
           </div>
           )

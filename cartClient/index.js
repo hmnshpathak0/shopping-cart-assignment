@@ -9,4 +9,4 @@ import App from './App'
 
 ReactDOM.render( <Provider store={store}>
   <FormProvider rules={rules} messages={messages}><App /></FormProvider>
-</Provider>, document.getElementById('app'));
+</Provider>, document.getElementById('root'));

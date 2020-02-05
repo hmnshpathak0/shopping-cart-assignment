@@ -7,7 +7,7 @@ function SideNav(props){
     //this method set the category selected 
     const selectCategory = cat => {
         if(props.cat.id && props.cat.id == cat.id){
-            props.saveData({})     
+            props.saveData({});     
         }
         else{
             props.saveData(cat);
@@ -16,7 +16,7 @@ function SideNav(props){
     return(
         <React.Fragment>
              {
-                       props.categories.map(item =>  <div key={item.id} className='cat_menu_action'><CustomButton styleClass='cat_menu_btn'  val={item} aria-labels={labelConfig.CatNav} aria-controls={labelConfig.Products} handler={selectCategory} key={item.id} text={item.name}/></div>)
+                       props.categories.map(item =>  <div key={item.id} className={'cat_menu_action'+((props.cat.id && item.id==props.cat.id)? ' cat_menu_action--active':'')}><CustomButton styleClass='cat_menu_btn'  val={item} aria-labels={labelConfig.CatNav} aria-controls={labelConfig.Products} handler={selectCategory} key={item.id} text={item.name}/></div>)
             }
         </React.Fragment>
     )

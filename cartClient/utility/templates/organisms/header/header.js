@@ -7,6 +7,7 @@ import links from './links.json';
 import {screenConfig, urlConfig, labelConfig} from '../../../../static/conf/constants';
 import {connect} from 'react-redux';
 import nativeClick from '../../molecules/nativeClick/nativeClick';
+import CustomButton from '../../atoms/buttons/customButton/customButton';
 
 class Header extends React.Component{
     constructor(){
@@ -69,12 +70,12 @@ class Header extends React.Component{
         return(
         <div ref={this.headerElement} className='header'>
         <nav role="navigation" className='header_leftpan'>
-        <img className='header_logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
+            <img className='header_logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
      sizes="(max-width: 600px) 480px,
             800px"   src={urlConfig.logoImageUrlSmall} alt='sabka Bazaar'/>
-        <button className='header_iconBtn' onClick={this.toggleMenu} aria-label='Menu Bar' aria-controls='header_dropdown'> 
+        <CustomButton styleClass='header_iconBtn' handler={this.toggleMenu} label='Menu Bar' control='header_dropdown' > 
             <i title='Menu bar'  role="navigation"  aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
-        </button>
+        </CustomButton>
         <div className='header_nav'>
             {links.slice(0,2).map((nav,index) =>{
                return  <NavLink aria-label={nav.name} key={index}  className='header_nav_item' to={'/'+nav.url}>{nav.name}</NavLink>

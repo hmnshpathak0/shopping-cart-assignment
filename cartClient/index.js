@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import 'bootstrap/scss/bootstrap.scss';
 import {store} from './store';
 import { FormProvider } from 'react-advanced-form';
 import rules from './utility/utils/formValidation/validationRules';

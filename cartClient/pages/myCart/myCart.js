@@ -1,11 +1,12 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import './MyCart.scss';
+import 'font-awesome/scss/font-awesome.scss'; 
 import {connect} from 'react-redux';
 import CartItem from '../../utility/templates/molecules/cartItem/cartItem';
 import { labelConfig, urlConfig } from '../../static/conf/constants';
 import CustomButton from '../../utility/templates/atoms/buttons/customButton/customButton';
-import {CART_OPEN_STATUS} from '../../utility/Actions/cartAction/types'
+import {CART_OPEN_STATUS,SAVE_CATEGORY} from '../../utility/Actions/cartAction/types'
 
 class MyCart extends React.Component{
     constructor(){
@@ -13,7 +14,7 @@ class MyCart extends React.Component{
         this.state={
             cart:[],
             total:0,
-            isModalOpen:false
+            isModalOpen:false,
         }
     }
     
@@ -23,7 +24,7 @@ class MyCart extends React.Component{
     }
 
     closeCart = () => {
-        this.props.closeModal();
+        this.props.closeModal(false);
     }
 
     static getDerivedStateFromProps(props,state){
@@ -38,6 +39,13 @@ class MyCart extends React.Component{
             update.total += itemTotal;
         })
         return Object.keys(update).length? update:null
+    }
+
+    componentDidMount(){
+            this.props.closeModal(true);
+    }
+    componentWillUnmount(){
+        this.props.closeModal(false);
     }
     render(){
   
@@ -101,9 +109,9 @@ const mapStatetoProps = state => {
 }
 const mapDispatcherToProps = dispatch => {
     return {
-        closeModal: () => dispatch({
+        closeModal: flag => dispatch({
             type: CART_OPEN_STATUS,
-            payload: false,
+            payload: flag,
         })
     }
 }

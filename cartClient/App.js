@@ -48,13 +48,14 @@ class App extends Component {
     })
   }
 
+
   render() {
     const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
     return (
       <BrowserRouter>
        <div  className={'app '+ (isCartOpen?'app--light':'')}>
       <Header handleResize={this.changeScreen} screenSize={this.state.screenSize}/>
-          <div   className='app_container'>
+          <div   className={'app_container'+(this.state.cartOpen?' app_container--grow':'')}>
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/home" component={Home} />} />

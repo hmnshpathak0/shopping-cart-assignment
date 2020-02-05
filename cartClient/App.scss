@@ -15,14 +15,13 @@
     &--light{
       overflow: hidden;
     }
-    &_container {
-    position: relative;
-    display: flex;
-    flex: 1;
-    align-items: stretch;
-    & --grow {
-      flex-grow: 1;
-    }
+    &_container{
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      &--grow{
+        flex: 1;
+      }
     }
     &_modal{
       position: absolute;

@@ -10,7 +10,7 @@
     position: relative;
     &_details{
         position: relative;
-        max-height: 65vh;;
+        max-height: 80vh;;
     }
     &_close{
         display: none;
@@ -103,7 +103,7 @@
         position:absolute;
         z-index:1000;
         bottom: 0;
-        height: 88vh;
+        height: 80vh;
         right: 10vw;
         padding-top:0;
         width:40%;

@@ -5,8 +5,8 @@ import CatMenu from '../../utility/templates/molecules/catMenu/catMenu';
 import './ProductDetails.scss';
 import ProductItem from '../../utility/templates/molecules/productItem/productItem';
 import {fetchData} from '../../utility/Actions/cartAction/action';
-import {SET_CART} from '../../utility/Actions/cartAction/types'
 import {urlConfig} from '../../static/conf/constants'
+import { SET_CART,SAVE_CATEGORY } from '../../utility/Actions/cartAction/types';
 class ProductDetails extends React.Component{
     constructor(){
         super();
@@ -65,7 +65,7 @@ class ProductDetails extends React.Component{
             this.props.getRequest(urlConfig.categoriesUrl)
         }
         this.props.getRequest(urlConfig.cartApiUrl);
-    
+        window.scrollTo(0, 0)
     
     }
 
@@ -88,6 +88,10 @@ class ProductDetails extends React.Component{
             cartItem.quantity = 1;
             this.props.addItem(cartItem)
         }
+    }
+
+    componentWillUnmount(){
+        this.props.saveCat();
     }
     render(){
         return(
@@ -125,7 +129,11 @@ const mapDispatcherToProps = dispatch => {
         addItem: (item) => dispatch({
             type: SET_CART,
             payload: item,
-        })
+        }),
+        saveCat: () => dispatch( {
+            type:SAVE_CATEGORY,
+            payload: {}
+        } )
     }
 }
          

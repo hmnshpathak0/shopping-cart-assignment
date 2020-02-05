@@ -7,9 +7,9 @@ import {labelConfig,urlConfig} from '../../static/conf/constants';
 import {postData} from '../../utility/Actions/loginAction/action'
 function Login(props){
 
-        const handleSubmit = (serialised,fields,form) => {
+        const handleSubmit = (serialised) => {
             
-            return new Promise((resolve,reject)=>{
+            return new Promise((resolve)=>{
                 resolve(props.postData(urlConfig.loginUrl,JSON.stringify(serialised)))
             })
         }

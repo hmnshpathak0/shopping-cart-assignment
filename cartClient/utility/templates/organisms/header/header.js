@@ -50,6 +50,7 @@ class Header extends React.Component{
             this.setState({height:this.headerElement.current.clientHeight})
     }
     updateDimensions = () => {
+        console.log("hiii")
         this.props.handleResize();
         if(this.state.toggle && this.state.height!=this.headerElement.current.clientHeight){
             this.setState({height:this.headerElement.current.clientHeight})

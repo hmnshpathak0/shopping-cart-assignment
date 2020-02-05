@@ -42,8 +42,14 @@ class MyCart extends React.Component{
     }
 
     componentDidMount(){
+   
             this.props.closeModal(true);
     }
+
+    componentDidUpdate(){
+   
+        this.props.closeModal(true);
+}
     componentWillUnmount(){
         this.props.closeModal(false);
     }
@@ -77,7 +83,7 @@ class MyCart extends React.Component{
                 </div>
                 <div className='cart_checkout'>
                     <span className='cart_font cart_font--small'>{labelConfig.CartPromoCode}</span>
-                    <CustomButton handler={this.redirectHome} styleClass='cart_btn cart_btn--full cart_font cart_font--medium' label={labelConfig.CartCheckout} control={labelConfig.CartPayment} rightText={labelConfig.Rupee+this.state.total+' '+labelConfig.RightArrow} text={labelConfig.CartProceed}/>
+                    <CustomButton handler={this.redirectHome} styleClass='cart_btn cart_btn--full' label={labelConfig.CartCheckout} control={labelConfig.CartPayment} rightText={labelConfig.Rupee+this.state.total+' '+labelConfig.RightArrow} text={labelConfig.CartProceed}/>
                 </div>
           </React.Fragment>
             ):(
@@ -91,10 +97,10 @@ class MyCart extends React.Component{
                     }
                 </div>
                 <div className='cart_emptyDesc'>
-                <h5 className='cart_font cart_font--medium'>{labelConfig.CartEmptyMessage}</h5>
-                <span className='cart_font cart_font--medium' >{labelConfig.CartEmptyPromo}</span>
+                <h5>{labelConfig.CartEmptyMessage}</h5>
+                <span>{labelConfig.CartEmptyPromo}</span>
                 </div>
-                <CustomButton handler={this.redirectHome} styleClass='cart_btn cart_btn--empty cart_font cart_font--medium' label={labelConfig.CartEmptyButtonText} control={labelConfig.CartEmptyButtonText}  text={labelConfig.CartEmptyButtonText}/>
+                <CustomButton handler={this.redirectHome} styleClass='cart_btn cart_btn--empty' label={labelConfig.CartEmptyButtonText} control={labelConfig.CartEmptyButtonText}  text={labelConfig.CartEmptyButtonText}/>
             </React.Fragment>)
                 }
         </main>

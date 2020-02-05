@@ -33,7 +33,7 @@ const updateData = (state = initialState, action) => {
             cart: [...state.cart,action.payload]
         });
         case DELETE_CART: return Object.assign({}, state, {
-            cart: state.cart.filter(item =>payload.id == item.id)
+            cart: state.cart.filter(item =>action.payload != item.id)
         });
         case CART_OPEN_STATUS: return Object.assign({}, state, {
             cartOpen: action.payload

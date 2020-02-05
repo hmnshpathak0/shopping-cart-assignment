@@ -8,8 +8,10 @@ function CartItem(props){
     const {item} = props;
     //decrease the quantity of the item
     const reduceItem = () => {
-        if(item.quantity==0)
+        if(item.quantity==1){
+            props.deleteCartItem(item.id);
             return;
+        }
         item.quantity= item.quantity - 1;
         props.modifyCart(item)
     }
@@ -29,7 +31,7 @@ function CartItem(props){
                 <CustomButton text={labelConfig.Plus} styleClass='cart_item_btn' label={labelConfig.IncreaseQuantity} control={labelConfig.CartItem} handler={increaseItem}/>
                 <span>{labelConfig.Multiply}</span>
                 <span>{labelConfig.Rupee+item.price}</span>
-                <span className='cart_item_total'>{labelConfig.Rupee+item.quantity * item.price}</span>
+                <span>{labelConfig.Rupee+item.quantity * item.price}</span>
              </div> 
             </div>
         </figure> 
@@ -39,9 +41,13 @@ function CartItem(props){
 }
 const mapDispatcherToProps = dispatch => {
     return {
-        modifyCart: (item) => dispatch({
+        modifyCart: item => dispatch({
             type: MODIFY_CART,
             payload:item,
+        }),
+        deleteCartItem: id => dispatch({
+            type: DELETE_CART,
+            payload:id,
         })
     }
 }

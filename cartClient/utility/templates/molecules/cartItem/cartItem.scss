@@ -12,6 +12,7 @@
     }
     &_info{
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: space-around;
         padding-left: 0.3em;
@@ -23,6 +24,10 @@
             font-size: medium;
             padding: 0.5em;;
         }
+        span:last-child{
+            margin-left: auto;
+            margin-right: 1.5em;
+       }
 
     }
     &_btn{
@@ -45,7 +50,7 @@
             width: 20%;
         }
        &_btn{
-            font-size: smaller;
+            font-size: medium;
        }
        &--medium{
            font-size: medium;

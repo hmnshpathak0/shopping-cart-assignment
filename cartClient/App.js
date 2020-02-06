@@ -70,7 +70,7 @@ class App extends Component {
             </Switch>
           {/* </div> */}
           { isCartOpen && (
-          <div className='app__modal'>
+          <div className='cart-modal'>
               <MyCart isModalOpen={isCartOpen} />
           </div>
           )

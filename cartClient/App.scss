@@ -11,14 +11,7 @@
     &--light{
       overflow: hidden;
     }
-    // .content{
-    //   position: relative;
-    //   display: flex;
-    //   &--grow{
-    //     flex: 1;
-    //   }
-    // }
-    &__modal{
+    .cart_modal{
       position: absolute;
       width: 100%;
       height: 100%;
@@ -54,7 +47,7 @@
       margin-top:1.2rem;
       color:$color-white-1;
       background: $color-pink-2; 
-      padding:0.5em
+      padding:0.5rem
     }
     input{
       width:85%;

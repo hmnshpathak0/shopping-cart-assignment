@@ -23,22 +23,22 @@ function Banner(props) {
 }
   return (
     (props.banner.length > 0) &&
-    <section className='home_banner' role='region' >
+    <section className='home__banner' role='region' >
     <AutoPlaySwipeableViews axis='x' index={currentItem}
     onChangeIndex={handleCount} enableMouseEvents
     aria-live='off'>
     {props.banner.map((item, index) => (
-      <div className="home_banner_item" key={item.id} role='group'
+      <div className="home__banner__item" key={item.id} role='group'
         aria-label={(index + 1)} >
           <figure>
-            <img className='home_banner_image' src={item.bannerImageUrl} alt={item.bannerImageAlt} />
+            <img className='home__banner__image' src={item.bannerImageUrl} alt={item.bannerImageAlt} />
           </figure>
       </div>
     ))}
   </AutoPlaySwipeableViews>
-  <div className='home_banner_action'>
-    <CustomButton control='bannerSlide' label={labelConfig.Prev} handler={handlePrev} styleClass='home_banner_btn' text={labelConfig.Prev}/>
-    <CustomButton control='bannerSlide' label={labelConfig.Next} handler={handleNext} styleClass='home_banner_btn' text={labelConfig.Next}/>
+  <div className='home__banner__action'>
+    <CustomButton control='bannerSlide' label={labelConfig.Prev} handler={handlePrev} styleClass='home__banner__btn' text={labelConfig.Prev}/>
+    <CustomButton control='bannerSlide' label={labelConfig.Next} handler={handleNext} styleClass='home__banner__btn' text={labelConfig.Next}/>
   </div>
   <Slider activeSlider={currentItem} total={props.banner.length} slide={handleCount}/>
   </section>

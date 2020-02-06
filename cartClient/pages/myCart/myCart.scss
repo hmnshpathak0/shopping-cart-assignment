@@ -2,17 +2,15 @@
 
 .cart{
     background: $color-grey-1;
-    padding-top:3.5em;
+    padding-top:3.5rem;
     font-weight: 600;
     display: flex;
-    width: 100%;
     flex-direction: column;
-    position: relative;
-    &_details{
-        position: relative;
+    justify-content: space-between;
+    &__details{
         max-height: 80vh;;
     }
-    &_close{
+    &__close{
         display: none;
         position: absolute;
         font-size: x-large;
@@ -21,10 +19,10 @@
         color:$color-white-1;
         align-self: center;
     }
-    &_empty{
+    &__empty{
         margin-top: 40%;
     }
-    &_font{
+    &__font{
         padding: 0.2em;
         &--small{
             font-size: small;
@@ -39,7 +37,7 @@
             font-size: large;
         }
     }
-    &_desc{
+    &__desc{
         background: $color-white-1;
         margin-bottom:1rem;
         padding:0.5em;
@@ -47,14 +45,14 @@
         align-items: baseline;
  
     }
-    &_items{
+    &__items{
         display: flex;
         position: relative;
         flex-direction: column;
         max-height: 60%;
         overflow-y: scroll;
     }
-    &_banner{
+    &__banner{
         display:flex;
         margin: 1rem 0.5rem;
         align-items: center;
@@ -65,14 +63,14 @@
         }
         background-color: $color-white-1;
     }
-    &_emptyDesc{
+    &__emptyDesc{
         margin-top: 30%;
         span,h5{
             padding: 0.2em;
             font-size: medium;
         }
     }
-    &_btn{
+    &__btn{
         background: $color-pink-2;
         color:$color-white-1;
         align-self: stretch;
@@ -96,7 +94,7 @@
             width: 100%;
         }
     }
-    &_checkout{
+    &__checkout{
         bottom:0;
         width: 100%;
         background:$color-white-1;
@@ -114,10 +112,10 @@
         padding-top:0;
         width:40%;
         font-size: smaller;
-        &_items{
+        &__items{
             max-height: 80%;
         }
-        &_checkout{
+        &__checkout{
             bottom:0;
             width: 100%;
             height: 13%;
@@ -132,7 +130,7 @@
             flex: 1;
             
         }
-        &_btn{
+        &__btn{
             background: $color-pink-2;
             color:$color-white-1;
             align-self: stretch;
@@ -151,19 +149,19 @@
                 height: 45%;
             }
         }
-        &_desc{
+        &__desc{
             background: $color-black-1;
             color: $color-white-1;
         }
-        &_close{
+        &__close{
             display: block;
         }
-        &_font{
+        &__font{
             padding: 0.1em;
             &--xlarge{
             font-size: large;
         }
-        &_details{
+        &__details{
             height: 100%;;
         }
     }
@@ -174,10 +172,10 @@
     }
     @media only screen and (min-height:$itab-height){
         height: 70vh;
-        &_items{
+        &__items{
             max-height: 75%;
         }
-        &_checkout{
+        &__checkout{
             height: 10%;
         }
     }

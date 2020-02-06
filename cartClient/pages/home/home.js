@@ -38,7 +38,7 @@ class Home extends Component{
             <React.Fragment>
                 <main className='home'>
                     <Banner banner={this.state.banners} />
-                    <section className='home_cat'>
+                    <section className='home__cat'>
                     {
                         this.state.categories.map((cat,index) => <ShowCategory index={index} key={cat.id} item={cat} />)
                     }

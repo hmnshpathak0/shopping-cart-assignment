@@ -29,26 +29,26 @@ class ProductItem extends React.Component{
     return(
        
         <React.Fragment >
-            <div className='product_item'>
-            <h5 className='product_item_title'>{item.name}</h5>
+            <div className='product__item'>
+            <h5 className='product__item__title'>{item.name}</h5>
              {(!this.state.screenSize) ? (
                  <React.Fragment>
-                 <figure className='product_item_info'>
-                    <img alt={item.name} className='product_item_image' src={item.imageURL}/>
-                    <figcaption title={item.description} className='product_item_desc'>{item.description}</figcaption>
+                 <figure className='product__item__info'>
+                    <img alt={item.name} className='product__item__image' src={item.imageURL}/>
+                    <figcaption title={item.description} className='product__item__desc'>{item.description}</figcaption>
                 </figure>
-                <div className='product_item_action'>
-            <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
+                <div className='product__item__action'>
+            <CustomButton label={labelConfig.AddToCart} styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
                 </div>
                 </React.Fragment>
             )
              : (
                  <React.Fragment>
-            <figure className='product_item_info'>
-                <img alt={item.name} className='product_item_image' src={item.imageURL}/>
-                <div className='product_item_content'>
-                <figcaption className='product_item_desc' title={item.description}>{item.description}</figcaption>
-                <CustomButton label={labelConfig.AddToCart} styleClass='product_item_btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>                </div>
+            <figure className='product__item__info'>
+                <img alt={item.name} className='product__item__image' src={item.imageURL}/>
+                <div className='product__item__content'>
+                <figcaption className='product__item__desc' title={item.description}>{item.description}</figcaption>
+                <CustomButton label={labelConfig.AddToCart} styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>                </div>
             </figure>
             </React.Fragment>
              

@@ -95,14 +95,14 @@ class ProductDetails extends React.Component{
     }
     render(){
         return(
-            <main className='cat_products'>
-                <aside className='cat_menu'>
+            <main className='category'>
+                <aside className='category__menu'>
                     <SideNav cat={this.props.category} sameCat={this.state.sameCat} handler={this.toggleCatFlag} categories={this.state.categories} />
                 </aside>
-                <div className='cat_dropdown_div'> 
+                <div className='category__dropdown'> 
                 <CatMenu category={this.state.category} categories={this.state.categories}/>
                 </div>
-                <section className='cat_products_items'>
+                <section className='category__products'>
                 {
                   this.state.catproducts.map(product => <ProductItem handler={this.addToCart} key={product.id} item={product}/>)
 

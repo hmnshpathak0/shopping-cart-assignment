@@ -17,7 +17,7 @@ function CatMenu(props){
     }
     return(
        <React.Fragment>
-           <select  value={category.name?category.name:""} className='cat_dropdown_select' name='selectedCategory' ref={selectElememt} onChange={changeCategory}>
+           <select  value={category.name?category.name:""} className='category__dropdown__select' name='selectedCategory' ref={selectElememt} onChange={changeCategory}>
           <option value=''>{labelConfig.SelectCategory}</option>
             {     
                categories.map(item =>  <option key={item.id}  value={item.name}>{item.name}</option>)

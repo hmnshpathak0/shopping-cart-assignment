@@ -1,32 +1,42 @@
 @import '../../../theme/style/theme.scss';
 
-.home_banner{
+.home__banner{
     padding:1em;
     margin-top: 1em;
     display:flex;
     flex-direction:column;
 
-    &_image{
+    &__image{
         width: 100%;
     }
-
-    &_action {
+    &__slider {
+        position:sticky;
+        button{
+          padding: 0.6rem;
+          background: none;
+          font-size: 0.5rem;
+        }
+    }
+    &__ciricon{
+        color: $color-grey-4;
+        &--active{
+            color:$color-black-1;
+        }
+    }
+    &__action {
         display: none;
         position: sticky;
         justify-content: space-between;
         margin-top: -15%;
         margin-bottom: 10%;
-        .home_banner_btn{
+    }
+    &__btn{
             color:$color-white-1;
             background: $color-black-transparent-2;
-        }
     }
     @media only screen and (min-width:$screen-tablet){
-        .home_banner{
-            &_action{
+            &__action{
                 display:flex;
             }
         }
-    }
-
 }

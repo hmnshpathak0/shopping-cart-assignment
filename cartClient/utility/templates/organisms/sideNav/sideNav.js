@@ -16,7 +16,7 @@ function SideNav(props){
     return(
         <React.Fragment>
              {
-                       props.categories.map(item =>  <div key={item.id} className={'cat_menu_action'+((props.cat.id && item.id==props.cat.id)? ' cat_menu_action--active':'')}><CustomButton styleClass='cat_menu_btn'  val={item} aria-labels={labelConfig.CatNav} aria-controls={labelConfig.Products} handler={selectCategory} key={item.id} text={item.name}/></div>)
+                       props.categories.map(item =>  <div key={item.id} className={'category__menu__action'+((props.cat.id && item.id==props.cat.id)? ' category__menu__action--active':'')}><CustomButton styleClass='category__menu__btn'  val={item} aria-labels={labelConfig.CatNav} aria-controls={labelConfig.Products} handler={selectCategory} key={item.id} text={item.name}/></div>)
             }
         </React.Fragment>
     )

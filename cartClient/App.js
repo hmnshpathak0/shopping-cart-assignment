@@ -58,7 +58,7 @@ class App extends Component {
       <BrowserRouter>
        <div  className={'app '+ (isCartOpen?'app--light':'')}>
       <Header handleResize={this.changeScreen} screenSize={this.state.screenSize}/>
-          <div   className={'app_container'+(this.state.cartOpen?' app_container--grow':'')}>
+         {/* / <div   className={'content'+(this.state.cartOpen?' content--grow':'')}> */}
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/home" component={Home} />} />
@@ -68,9 +68,9 @@ class App extends Component {
               <Route exact path="/cart" component={MyCart} />
               <Route component={Home} />
             </Switch>
-          </div>
+          {/* </div> */}
           { isCartOpen && (
-          <div className='app_modal'>
+          <div className='app__modal'>
               <MyCart isModalOpen={isCartOpen} />
           </div>
           )

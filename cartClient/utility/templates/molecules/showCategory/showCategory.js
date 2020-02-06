@@ -13,18 +13,18 @@ function ShowCategory(props){
         props.saveData(item);
     }
     return (
-        <figure className='cat_item line line-bottom-grey'  >
-            { ((props.index)%2==0)&&<img src={item.imageUrl?item.imageUrl:''} alt={item.description} className='cat_item_image' />}
-             <div className='cat_item_description'>
+        <figure className='cat__item border_bottom border_bottom--grey'  >
+            { ((props.index)%2==0)&&<img src={item.imageUrl?item.imageUrl:''} alt={item.description} className='cat__item__image' />}
+             <div className='cat__item__description'>
              <span>{item.name}</span>
              <figcaption>
                  <span>{item.description}</span>
             </figcaption>
-            <NavLink  onClick={chooseCategory} to={'/'+urlConfig.productcompUrl} className='cat_item_btn' aria-label={labelConfig.Explore+item.key}>
+            <NavLink  onClick={chooseCategory} to={'/'+urlConfig.productcompUrl} className='cat__item__btn' aria-label={labelConfig.Explore+item.key}>
                 {labelConfig.Explore+item.key}
             </NavLink>
         </div>
-        { ((props.index)%2==1)&&<img src={item.imageUrl} alt={item.description} className='cat_item_image' />}
+        { ((props.index)%2==1)&&<img src={item.imageUrl} alt={item.description} className='cat__item__image' />}
         </figure>
     )
 }

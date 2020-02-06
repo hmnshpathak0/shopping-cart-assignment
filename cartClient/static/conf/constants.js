@@ -16,6 +16,7 @@ const urlConfig = {
     cartbannerImageUrl: '/static/images/lowest-price.png',
     logoImageUrlSmall: '/static/images/logo.png',
     logoImageUrlLarge: '/static/images/logo_2x.png',
+    cartButtonUrl: '/static/images/cart.svg',
     
 }
 //all config related to screen size
@@ -45,6 +46,7 @@ const labelConfig = {
     home : 'Home Page',
     Offer: 'Offers',
     Of: 'of',
+    GoCart: 'Go to Cart',
     Next: 'Next',
     Prev: 'Prev',
     Explore: 'Explore ',

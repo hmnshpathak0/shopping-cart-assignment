@@ -1,46 +1,41 @@
 @import './utility/theme/style/theme.scss';
+@import './utility/theme/style/z_index.scss';
+
 
 .app {
-    font-family: $font-family-dosis !important;
-    box-sizing: border-box;
-    text-align: center;
     padding: 0;
-    font-size: 1em;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    position: absolute;
     height: 100vh;
     width: 100vw;
     &--light{
       overflow: hidden;
     }
-    &_container{
-      position: relative;
-      display: flex;
-      align-items: stretch;
-      &--grow{
-        flex: 1;
-      }
-    }
-    &_modal{
+    // .content{
+    //   position: relative;
+    //   display: flex;
+    //   &--grow{
+    //     flex: 1;
+    //   }
+    // }
+    &__modal{
       position: absolute;
       width: 100%;
       height: 100%;
       overflow: hidden;
       top: 0;
-      z-index: 1000;
+      z-index: $cart_modal_z;
       background:rgba(0,0,0,0.7);
   }
-  .line-bottom{
+  .border_bottom{
     padding-bottom: 0.5em;
-    &-grey{
+    &--grey{
       box-shadow: 0 24px 5px -24px $color-grey-3;
     }
   }
   form {
     .eTopIC{
-      margin:0.3rem 0px;;
+      margin:0.3rem 0;
       &:focus-within{
         label{
           color: $color-blue-1;
@@ -73,38 +68,9 @@
     }
   }
   @media only screen and (max-width:$screen-tablet) {
-    font-size:0.7em;
+    font-size:0.7rem;
   }
   @media only screen and (min-width:$screen-desktop) {
-    padding: 0 5em;
-  }
-}
-
-
-body{
-  overflow-y: overlay;
-  overflow-x:overlay;
-
-  ul{
-    list-style: none;
-  }
-  a{
-    text-decoration: none;
-    color: $color-black-1;
-    &:hover{
-      text-decoration: none;
-      color:inherit;
-    }
-  }
-  button{
-    outline:0;
-    border:none;
-    cursor: pointer;
-  }
-  h5,h3,h4{
-    font-weight:bold
-  }
-  h4{
-    font-size: 1.5em;
+    padding: 0 5rem;
   }
 }

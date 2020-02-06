@@ -60,47 +60,47 @@ class MyCart extends React.Component{
                 {
                 this.state.cart.length?(
                     <React.Fragment>
-                        <div className='cart_details'>
-                        <div className='cart_desc'>
-                    <h3 className='cart_font cart_font--xlarge'>{labelConfig.MyCart} </h3>
-                    <span className='cart_font cart_font--medium'>{'('+this.state.cart.length+' item)'}</span>
+                        <div className='cart__details'>
+                        <div className='cart__desc'>
+                    <h3 className='cart__font cart_font--xlarge'>{labelConfig.MyCart} </h3>
+                    <span className='cart__font cart__font--medium'>{'('+this.state.cart.length+' item)'}</span>
                     {
                         this.state.isModalOpen && (
-                        <button className='cart_close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
+                        <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
                         )
                     }
 
                  </div> 
-                 <section className='cart_items'>
+                 <section className='cart__items'>
                   {
                    this.state.cart.map(cartItem => <CartItem key={cartItem.id} item={cartItem}/>)
                   }               
                 </section>
-                <div className='cart_banner'>
-                        <img alt={labelConfig.CartBanner} src={urlConfig.cartbannerImageUrl} className='cart_banner_img'/>
+                <div className='cart__banner'>
+                        <img alt={labelConfig.CartBanner} src={urlConfig.cartbannerImageUrl} className='cart__banner__img'/>
                         <span>{labelConfig.CartBannerTitle}</span>  
                     </div>
                 </div>
-                <div className='cart_checkout'>
-                    <span className='cart_font cart_font--small'>{labelConfig.CartPromoCode}</span>
-                    <CustomButton handler={this.redirectHome} styleClass='cart_btn cart_btn--full' label={labelConfig.CartCheckout} control={labelConfig.CartPayment} rightText={labelConfig.Rupee+this.state.total+' '+labelConfig.RightArrow} text={labelConfig.CartProceed}/>
+                <div className='cart__checkout'>
+                    <span className='cart__font cart__font--small'>{labelConfig.CartPromoCode}</span>
+                    <CustomButton handler={this.redirectHome} styleClass='cart__btn cart__btn--full' label={labelConfig.CartCheckout} control={labelConfig.CartPayment} rightText={labelConfig.Rupee+this.state.total+' '+labelConfig.RightArrow} text={labelConfig.CartProceed}/>
                 </div>
           </React.Fragment>
             ):(
             <React.Fragment>
-                <div className='cart_desc'>
-                    <h3 className='cart_font cart_font--xlarge'>{labelConfig.MyCart} </h3>
+                <div className='cart__desc'>
+                    <h3 className='cart__font cart__font--xlarge'>{labelConfig.MyCart} </h3>
                     {
                         this.state.isModalOpen && (
-                        <button className='cart_close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
+                        <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
                         )
                     }
                 </div>
-                <div className='cart_emptyDesc'>
+                <div className='cart__emptyDesc'>
                 <h5>{labelConfig.CartEmptyMessage}</h5>
                 <span>{labelConfig.CartEmptyPromo}</span>
                 </div>
-                <CustomButton handler={this.redirectHome} styleClass='cart_btn cart_btn--empty' label={labelConfig.CartEmptyButtonText} control={labelConfig.CartEmptyButtonText}  text={labelConfig.CartEmptyButtonText}/>
+                <CustomButton handler={this.redirectHome} styleClass='cart__btn cart__btn--empty' label={labelConfig.CartEmptyButtonText} control={labelConfig.CartEmptyButtonText}  text={labelConfig.CartEmptyButtonText}/>
             </React.Fragment>)
                 }
         </main>

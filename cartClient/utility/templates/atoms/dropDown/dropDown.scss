@@ -1,5 +1,5 @@
 @import '../../../theme/style/theme.scss';
-.header_dropdown{
+.header__dropdown{
     position: absolute;
     will-change: transform;
     top: 0;
@@ -33,11 +33,11 @@
     }
 
 }
-.header_dropdown-display{
+.header__dropdown--display{
     display:block;
 }
 @media only screen and (min-width:$screen-tablet) {
-    .header_dropdown-display{
+    .header__dropdown--display{
         display:none;
     }
 }

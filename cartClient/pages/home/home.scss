@@ -1,11 +1,11 @@
 @import '../../utility/theme/style/theme.scss';
 
 .home{
-    width: 100%;
-    &_cat{
+    display: flex;
+    flex-direction: column;
+    &__cat{
         display:flex;
         flex-direction: column;
-        justify-content:space-around;
     }
     &--light{
         opacity:0.2;

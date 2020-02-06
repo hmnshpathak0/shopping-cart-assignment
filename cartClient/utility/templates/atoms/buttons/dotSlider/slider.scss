@@ -1,19 +1,18 @@
 @import '../../../../theme/style/theme.scss';
 
 
-.home_banner_slider {
+.home__banner__slider {
       position:sticky;
       
       button{
-        padding: 0.3em;
+        padding: 0.6rem;
         background: none;
-        cursor:  pointer !important;
-        .banner_ciricon{
-            color: $color-grey-4;
-            &-active{
-                color:$color-black-1;
-            }
+        font-size: 0.5rem;
+      }
+      &__ciricon{
+        color: $color-grey-4;
+        &--active{
+            color:$color-black-1;
         }
-   
     }
 }

@@ -1,78 +1,64 @@
 @import '../../utility/theme/style/theme.scss';
 
-.cat_products {
+.category {
     display:flex;
     flex-direction:column;
+    flex: 1;
     
-    .cat_menu{
+    &__menu{
         display:none;
         background: $color-grey-1;
-        width:30%;
-        display:none;
-        align-items: stretch;
         flex-direction: column;
-         min-height: 95vh;
-        &_action{
-            padding-left: 0.4em;
-            &--active {
-                background:$color-grey-5;
-                button {
-                    color: $color-white-1;
-                }
-            }
-        }
-        &_btn{
+         &__btn{
             background: none;
-            padding: 0.8em 0;
+            padding: 0.8rem 0;
             width: 100%;
             border-bottom: solid 0.1vw #b3b3b3;
             text-align: left;
             
         }
+        &__action{
+        padding-left: 0.4rem;
+        &--active {
+            background:$color-grey-5;
+            button {
+                color: $color-white-1;
+                }
+            }
+        }
     }
-    .cat_dropdown_div{
-        display:block ;
-        width:100%;
-        padding:1em 0;
-        font-size:1.2em;
+ 
+    &__dropdown{
+        padding:1rem 0;
+        font-size:0.8rem;
     }
-    &_items{
+    &__products{
         display:flex;
         flex-wrap: wrap;
-        padding: 1em;
         align-content: flex-start;
+        padding: 0.3rem;
     }
     @media only screen and (min-width:$screen-tablet){
         flex-direction: row;
-        .cat_menu {
+        &__menu {
             display:flex;
+            flex: 0.3;
         }
-        .cat_products_items{
+        &__products{
             flex-direction: row;
-            width:70%;
+            flex:0.7;
+            padding: 0;
         }
-        .cat_dropdown_div{
+        &__dropdown{
             display:none;
         }
     }
     @media only screen and (min-width:$screen-laptop){
-        flex-direction: row;
-        .cat_menu {
-            display:flex;
-            min-height:88vh;
-            width:25%;
+        &__menu{
+            flex: 0.25;
         }
-        .cat_products_items{
-            flex-direction: row;
-            width:75%;
-        }
-        .cat_dropdown_div{
-            display:none;
+        &__products{
+            flex:0.75;
         }
     }
-    @media only screen and (min-height:$itab-height){
-       
-        min-height:95vh;
-    }
-
 }

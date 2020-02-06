@@ -3,103 +3,93 @@
 .header{
     display:flex;
     flex-direction:row;
-    align-items: center;
+    justify-content: space-between;
     box-shadow: 0 0 3.1vw 0 $color-grey-2;
     
-    &_logo{
-        padding:0.5em;
+    &__logo{
+        padding:0.3rem;
         width:40%;
     }
     
     
-    &_leftpan{
+    &__leftpan{
         display:flex;
-        min-width: 0;
-        align-items: center;
-        flex:0.8
+        flex: 0.7;
     }
-    &_rightpan{
-        flex: 0.2;
+    &__rightpan{
+        flex: 0.3;
         display: flex;
         flex-direction:column;
-        align-self: stretch;
-        justify-content: space-between;
-        &_nav{
+        &__nav{
             display: none;
         }
 
     }
-    &_iconBtn{
+    &__iconBtn{
         color: $color-pink-2;
         background: none;
-        outline: 0;
     }
-    &_nav{
+    &__nav{
         display:none;
-        margin: 0 2em;
-        ul{
-            margin:auto;
-        }
-        &_item{
-            font-size: large;
-            padding:0.8rem;
-            display:inline-block;
-            cursor:pointer;
-            &:hover,&:active{
-                border-bottom:1px solid $color-black-1;
-            }
-    
-        }
     }
 
     @media only screen and (min-width:$screen-tablet) {
-            &_iconBtn{
+            &__iconBtn{
                 display:none;
             }
-            &_menu{
+            &__menu{
                 display:block;
             }
-            &_logo{
+            &__logo{
                 width:25%;
             }
-            &_leftpan{
-                flex:0.85;
+            &__leftpan{
+               flex:0.8;
             }
-            &_rightpan{
-                flex:0.15;
-                &_nav{
-                   
-                    justify-content: space-around;
-                    font-size:0.9em;
-                    &--show{
-                        display:flex;
-                    }
-                    &--hide{
-                        display:none;
-                    }
+            &__rightpan{
+               flex:0.2;
+               &__nav{
+                font-size:0.9rem;
+                justify-content: space-around;
+                &--show{
+                    display:flex;
                 }
+                &--hide{
+                    display:none;
+                }
+               }
+               
             }
-            &_nav{
+            &__nav{
                 display:flex;
+                align-items: center;
+                margin: 0 2rem;
+                &__item{
+                    font-size: 1.1rem;
+                    padding:0.8rem;
+                    &--active{
+                        border-bottom:1px solid $color-black-1;
+                    }
+            
+                }
                 
             }
     
     }
     @media only screen and (min-width:$screen-laptop) {
-            &_logo{
+            &__logo{
                 width:20%;
             }
-            &_leftpan{
+            &__leftpan{
                 flex:0.9;
             }
-            &_rightpan{
+            &__rightpan{
                 flex:0.1;
- 
             }
            
         }
         @media only screen and (min-width:$screen-desktop) {
-            &_logo{
+            &__logo{
                 width:15%;
            
         }

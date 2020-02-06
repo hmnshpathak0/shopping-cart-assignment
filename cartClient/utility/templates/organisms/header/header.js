@@ -43,14 +43,12 @@ class Header extends React.Component{
   
     //this method is called to toggle the menu Bar
     toggleMenu=() => {
-       //setting the toggle value for dropdown menu
-       // this.setState({toggle : !this.state.toggle})
+  
         //setting the dropdown top position when menu is opened
         if(!this.state.toggle && this.state.height!=this.headerElement.current.clientHeight)
             this.setState({height:this.headerElement.current.clientHeight})
     }
     updateDimensions = () => {
-        console.log("hiii")
         this.props.handleResize();
         if(this.state.toggle && this.state.height!=this.headerElement.current.clientHeight){
             this.setState({height:this.headerElement.current.clientHeight})
@@ -70,29 +68,29 @@ class Header extends React.Component{
         
         return(
         <div ref={this.headerElement} className='header'>
-        <nav role="navigation" className='header_leftpan'>
-            <img className='header_logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
+        <nav role="navigation" className='header__leftpan'>
+            <img className='header__logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
      sizes="(max-width: 600px) 480px,
             800px"   src={urlConfig.logoImageUrlSmall} alt='sabka Bazaar'/>
-        <CustomButton styleClass='header_iconBtn' handler={this.toggleMenu} label='Menu Bar' control='header_dropdown' > 
-            <i title='Menu bar'  role="navigation"  aria-hidden="true" className='fa fa-bars header_icon fa-2x'></i>
+        <CustomButton styleClass='header__iconBtn' handler={this.toggleMenu} label='Menu Bar' control='header__dropdown' > 
+            <i title='Menu bar'  role="navigation"  aria-hidden="true" className='fa fa-bars header__icon fa-2x'></i>
         </CustomButton>
-        <div className='header_nav'>
+        <div className='header__nav'>
             {links.slice(0,2).map((nav,index) =>{
-               return  <NavLink aria-label={nav.name} key={index}  className='header_nav_item' to={'/'+nav.url}>{nav.name}</NavLink>
+               return  <NavLink  activeClassName='header__nav__item--active' aria-label={nav.name} key={index}  className='header__nav__item' to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>
         <DropDown loginStatus={this.state.loginStatus} height={this.state.height} toggle={this.state.toggle}/>
         </nav>
-        <div className='header_rightpan'>
-        <div className={'header_rightpan_nav' +((this.state.loginStatus)?' header_rightpan_nav--hide':' header_rightpan_nav--show')} role='navigation'>
+        <div className='header__rightpan'>
+        <div className={'header__rightpan__nav' +((this.state.loginStatus)?' header__rightpan__nav--hide':' header__rightpan__nav--show')} role='navigation'>
         {links.slice(2,4).map((nav,index) =>{
-               return  <NavLink aria-label={nav.name} key={index}  className='rightpan_nav_item' to={'/'+nav.url}>{nav.name}</NavLink>
+               return  <NavLink aria-label={nav.name} key={index}   to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>
-            <CartButton screenSize={this.state.screenSize}  total={this.state.cartLength} style={'header_cartButton '+ ((this.state.loginStatus)?'header_cartButton--full':'header_cartButton--stretch')}/>
+            <CartButton screenSize={this.state.screenSize}  total={this.state.cartLength} style='header__cartButton '/>
         </div>
         </div>
         )
@@ -104,4 +102,4 @@ const mapStatetoProps = state => {
         cart:state.updateData.cart,
     }
 }
-export default connect(mapStatetoProps,null)(nativeClick(Header,['header_icon']));
+export default connect(mapStatetoProps,null)(nativeClick(Header,['header__icon']));

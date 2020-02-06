@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './CartButton.scss';
-import {screenConfig,urlConfig} from '../../../../../static/conf/constants';
+import {screenConfig,urlConfig, labelConfig} from '../../../../../static/conf/constants';
 import {CART_OPEN_STATUS} from '../../../../Actions/cartAction/types'
 
 function CartButton(props) {
@@ -17,8 +17,8 @@ function CartButton(props) {
   }
   return (
     <button onClick={handleCartClick} aria-label='cartIcon'  className={props.style} >
-    <a  className='header_cartNav'>
-      <img src='/static/images/cart.svg' alt="Go To Cart"   />
+    <a  className='header__cartNav'>
+      <img src={urlConfig.cartButtonUrl}  alt={labelConfig.GoCart}   />
       <span> {props.total} Item</span>
     </a>
     </button>

@@ -17,12 +17,12 @@ function Login(props){
         return(
 
             <div className='login'>
-                <div className='login_desc'>
+                <div className='login__desc'>
                     <h3>{labelConfig.Login}</h3>
                     <span>{labelConfig.LoginMessage}</span>
                 </div>
                 
-                <CustomForm style='login_form' url={urlConfig.homecompUrl} submit={labelConfig.Login} handler={handleSubmit} formInput={loginForm} />                
+                <CustomForm style='login__form' url={urlConfig.homecompUrl} submit={labelConfig.Login} handler={handleSubmit} formInput={loginForm} />                
             </div>
         )
    

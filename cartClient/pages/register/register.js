@@ -17,12 +17,12 @@ function Register(props){
         return(
 
             <div className='register'>
-                <div className='register_desc'>
+                <div className='register__desc'>
                     <h3>{labelConfig.SignIn}</h3>
                     <span>{labelConfig.RegisterMessage}</span>
                 </div>
                 
-                <CustomForm style='register_form' url={urlConfig.homecompUrl} submit={labelConfig.SignIn} handler={handleSubmit} formInput={registerForm} />                
+                <CustomForm style='register__form' url={urlConfig.homecompUrl} submit={labelConfig.SignIn} handler={handleSubmit} formInput={registerForm} />                
             </div>
         )
    

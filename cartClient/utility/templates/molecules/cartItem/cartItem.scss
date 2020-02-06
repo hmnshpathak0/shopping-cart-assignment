@@ -1,16 +1,13 @@
 @import '../../../theme/style/theme.scss';
-.cart_item{
+.cart__item{
     display:flex;
-    padding: 0.2em;
+    padding: 0.2rem;
     background:$color-white-1;
     text-align: left;
-    &_image{
+    &__image{
         width:20%;
     }
-    &--medium{
-        font-size:1.4em;
-    }
-    &_info{
+    &__info{
         display: flex;
         flex: 1;
         flex-direction: column;
@@ -18,43 +15,43 @@
         padding-left: 0.3em;
 
     }
-    &_quantity{
+    &__title{
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    &__quantity{
         display:flex;
+        font-size: 1.1rem;
         span{
-            font-size: medium;
             padding: 0.5em;;
         }
         span:last-child{
             margin-left: auto;
-            margin-right: 1.5em;
+            margin-right: 1.5rem;
        }
 
     }
-    &_btn{
+    &__btn{
         background-color: $color-pink-2;
-        border-radius: 0.4em;
-        padding: 0 0.5em;
+        border-radius: 0.4rem;
+        padding: 0 0.5rem;
         align-self: center;
         color:$color-white-1;
-        font-size: 1.2em;
+        font-size: 1rem;
     
     }
     @media only screen and (min-width:$screen-tablet){
-        &_image{
+        &__image{
             width:10%;
         }
          
      }
     @media only screen and (min-width:$screen-laptop){
-        &_image {
+        &__image {
             width: 20%;
         }
-       &_btn{
-            font-size: medium;
-       }
-       &--medium{
-           font-size: medium;
-       }
-        
+       &__btn{
+            font-size: 1.1rem;
+       }       
     }
 }

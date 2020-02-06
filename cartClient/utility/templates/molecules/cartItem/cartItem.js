@@ -21,14 +21,14 @@ function CartItem(props){
         props.modifyCart(item)
     }
     return (
-        <figure className='cart_item'>
-             <img alt={item.name} className='cart_item_image' src={item.imageURL}/>
-             <div className='cart_item_info'>
-             <figcaption title={item.name} className='cart_item_title'><h4 className='cart_font--large'>{item.name}</h4></figcaption>
-             <div className='cart_item_quantity'>
-                <CustomButton text={labelConfig.Minus} styleClass='cart_item_btn'  label={labelConfig.ReduceQuantity} control={labelConfig.CartItem} handler={reduceItem}/>
+        <figure className='cart__item'>
+             <img alt={item.name} className='cart__item__image' src={item.imageURL}/>
+             <div className='cart__item__info'>
+             <figcaption title={item.name} className='cart__item__title'>{item.name}</figcaption>
+             <div className='cart__item__quantity'>
+                <CustomButton text={labelConfig.Minus} styleClass='cart__item__btn'  label={labelConfig.ReduceQuantity} control={labelConfig.CartItem} handler={reduceItem}/>
                 <span>{item.quantity}</span>
-                <CustomButton text={labelConfig.Plus} styleClass='cart_item_btn' label={labelConfig.IncreaseQuantity} control={labelConfig.CartItem} handler={increaseItem}/>
+                <CustomButton text={labelConfig.Plus} styleClass='cart__item__btn' label={labelConfig.IncreaseQuantity} control={labelConfig.CartItem} handler={increaseItem}/>
                 <span>{labelConfig.Multiply}</span>
                 <span>{labelConfig.Rupee+item.price}</span>
                 <span>{labelConfig.Rupee+item.quantity * item.price}</span>

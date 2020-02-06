@@ -60,10 +60,10 @@ class MyCart extends React.Component{
                 {
                 this.state.cart.length?(
                     <React.Fragment>
-                        <div className='cart__details'>
+                        <div>
                         <div className='cart__desc'>
-                    <h3 className='cart__font cart_font--xlarge'>{labelConfig.MyCart} </h3>
-                    <span className='cart__font cart__font--medium'>{'('+this.state.cart.length+' item)'}</span>
+                    <h3>{labelConfig.MyCart} </h3>
+                    <span>{'('+this.state.cart.length+' item)'}</span>
                     {
                         this.state.isModalOpen && (
                         <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
@@ -82,21 +82,21 @@ class MyCart extends React.Component{
                     </div>
                 </div>
                 <div className='cart__checkout'>
-                    <span className='cart__font cart__font--small'>{labelConfig.CartPromoCode}</span>
+                    <span >{labelConfig.CartPromoCode}</span>
                     <CustomButton handler={this.redirectHome} styleClass='cart__btn cart__btn--full' label={labelConfig.CartCheckout} control={labelConfig.CartPayment} rightText={labelConfig.Rupee+this.state.total+' '+labelConfig.RightArrow} text={labelConfig.CartProceed}/>
                 </div>
           </React.Fragment>
             ):(
             <React.Fragment>
-                <div className='cart__desc'>
-                    <h3 className='cart__font cart__font--xlarge'>{labelConfig.MyCart} </h3>
+                <div className='cart__desc cart__desc--empty'>
+                    <h3>{labelConfig.MyCart} </h3>
                     {
                         this.state.isModalOpen && (
                         <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
                         )
                     }
                 </div>
-                <div className='cart__emptyDesc'>
+                <div>
                 <h5>{labelConfig.CartEmptyMessage}</h5>
                 <span>{labelConfig.CartEmptyPromo}</span>
                 </div>

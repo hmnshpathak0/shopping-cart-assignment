@@ -2,169 +2,109 @@
 
 .cart{
     background: $color-grey-1;
-    padding-top:3.5rem;
+    padding-top:1.5rem;
     font-weight: 600;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    &__details{
-        max-height: 80vh;;
-    }
     &__close{
         display: none;
-        position: absolute;
-        font-size: x-large;
+        font-size: 2em;
         background: none;
-        right: 0;
         color:$color-white-1;
-        align-self: center;
-    }
-    &__empty{
-        margin-top: 40%;
-    }
-    &__font{
-        padding: 0.2em;
-        &--small{
-            font-size: small;
-        }
-        &--medium{
-            font-size: medium;
-        }
-        &--xlarge{
-            font-size: x-large;
-        }
-        &--large{
-            font-size: large;
-        }
     }
     &__desc{
         background: $color-white-1;
-        margin-bottom:1rem;
-        padding:0.5em;
-        display:flex;
-        align-items: baseline;
- 
+        padding:0.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        text-align: left;
+        span{
+            font-size: 1.3rem;
+            padding: 0.2rem;
+        }
+        h3{
+            font-size: 1.6rem;
+        }
+        &--empty{
+            h3{
+                font-size: 1.7rem;
+            }
+        }
     }
     &__items{
         display: flex;
-        position: relative;
         flex-direction: column;
-        max-height: 60%;
+        max-height: 48vh;
         overflow-y: scroll;
     }
     &__banner{
         display:flex;
         margin: 1rem 0.5rem;
-        align-items: center;
-        font-size: 1.2em;
+        background-color: $color-white-1;
         &_img{
             width: 35%;
-            padding: 0.5em;
+            padding: 0.5rem;
         }
-        background-color: $color-white-1;
-    }
-    &__emptyDesc{
-        margin-top: 30%;
-        span,h5{
-            padding: 0.2em;
-            font-size: medium;
+        span{
+            font-size: 1rem;
+            align-self: center;
         }
     }
     &__btn{
         background: $color-pink-2;
         color:$color-white-1;
-        align-self: stretch;
-        display: flex;
-        font-size: medium;
-        padding: 0 1em;
-        justify-content: space-between;
+        padding: 0 1rem;
         &--empty{
             height: 5%;
             width: 80%;
-            position: absolute;
-            margin: 1em auto;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            justify-content: space-evenly;
+            margin: 1rem auto;
+     
         }
         &--full{
-            height: 25%;
-            margin: 0.5em auto;
+            display: flex;
+            height: 45%;
+            justify-content: space-between;
+            margin: 0.5rem auto;
             width: 100%;
         }
     }
     &__checkout{
-        bottom:0;
-        width: 100%;
         background:$color-white-1;
-        position: absolute;
-        padding: 0 2em;
-        font-size:small;
+        padding: 0 2rem;
+        font-size:0.9rem;
         
     }
     @media only screen and (min-width:$screen-laptop){
         position:absolute;
-        z-index:1000;
         bottom: 0;
         height: 80vh;
         right: 10vw;
         padding-top:0;
         width:40%;
-        font-size: smaller;
         &__items{
-            max-height: 80%;
+            max-height: 64vh;
         }
         &__checkout{
-            bottom:0;
-            width: 100%;
-            height: 13%;
-            justify-content: space-evenly;
-            background:$color-white-1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            padding: 0 2em;
-            font-size:small;
-            flex: 1;
-            
+            height: 10%;
         }
         &__btn{
-            background: $color-pink-2;
-            color:$color-white-1;
-            align-self: stretch;
-            display: flex;
-            font-size: medium;
+            font-size: 1.1rem;
             &--empty{
                 height: 8%;
-                width: 80%;
-                position: absolute;
-                margin: 1em auto;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-            &--full{
-                height: 45%;
             }
         }
         &__desc{
             background: $color-black-1;
             color: $color-white-1;
+            &--empty{
+                justify-content: space-between;
+            }
         }
         &__close{
             display: block;
         }
-        &__font{
-            padding: 0.1em;
-            &--xlarge{
-            font-size: large;
-        }
-        &__details{
-            height: 100%;;
-        }
-    }
         
     }
     @media only screen and (min-width: $screen-desktop){
@@ -172,11 +112,5 @@
     }
     @media only screen and (min-height:$itab-height){
         height: 70vh;
-        &__items{
-            max-height: 75%;
-        }
-        &__checkout{
-            height: 10%;
-        }
     }
 }

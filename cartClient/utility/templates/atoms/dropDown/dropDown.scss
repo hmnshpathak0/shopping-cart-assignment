@@ -1,10 +1,11 @@
 @import '../../../theme/style/theme.scss';
+@import '../../../theme/style/z_index.scss';
 .header__dropdown{
     position: absolute;
     will-change: transform;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: $cart_dropdown_z;
     display: none;
     float: left;
     min-width: 10rem;

@@ -13,12 +13,12 @@
         font-size: 1.4em;
         background: none;
         color:$color-white-1;
+        float: right;
     }
     &__desc{
         background: $color-white-1;
         padding:0.2rem;
         margin-bottom: 1rem;
-        display: flex;
         text-align: left;
         span{
             font-size: 1.1rem;
@@ -26,13 +26,10 @@
         }
         h3{
             font-size: 1.4rem;
-        }
-        &--empty{
-            h3{
-                font-size: 1.5rem;
-            }
+            display: inline;
         }
     }
+
     &__items{
         display: flex;
         flex-direction: column;
@@ -55,18 +52,15 @@
     &__btn{
         background: $color-pink-2;
         color:$color-white-1;
-        padding: 0 1rem;
+        padding: 0.5rem;
+        margin: 1rem auto;
         &--empty{
-            height: 5%;
-            width: 80%;
-            margin: 1rem auto;
+            width: 80%;     
      
         }
         &--full{
             display: flex;
-            height: 45%;
             justify-content: space-between;
-            margin: 0.5rem auto;
             width: 100%;
         }
     }
@@ -84,29 +78,17 @@
         padding-top:0;
         width:40%;
         &__items{
-            max-height: 64vh;
-        }
-        &__checkout{
-            height: 12%;
+            max-height: 68vh;
         }
         &__btn{
             font-size: 1.1rem;
-            &--empty{
-                height: 8%;
-            }
         }
         &__desc{
             background: $color-black-1;
             color: $color-white-1;
-            &--empty{
-                justify-content: space-between;
-            }
         }
         &__close{
             display: block;
-            &--full{
-                margin-left:auto;
-            }
         }
         
     }

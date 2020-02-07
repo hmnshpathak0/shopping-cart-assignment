@@ -10,26 +10,26 @@
     justify-content: space-between;
     &__close{
         display: none;
-        font-size: 2em;
+        font-size: 1.4em;
         background: none;
         color:$color-white-1;
     }
     &__desc{
         background: $color-white-1;
-        padding:0.5rem;
+        padding:0.2rem;
         margin-bottom: 1rem;
         display: flex;
         text-align: left;
         span{
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             padding: 0.2rem;
         }
         h3{
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
         &--empty{
             h3{
-                font-size: 1.7rem;
+                font-size: 1.5rem;
             }
         }
     }
@@ -87,7 +87,7 @@
             max-height: 64vh;
         }
         &__checkout{
-            height: 10%;
+            height: 12%;
         }
         &__btn{
             font-size: 1.1rem;
@@ -115,5 +115,11 @@
     }
     @media only screen and (min-height:$itab-height){
         height: 70vh;
+        &__items{
+            max-height: 60vh;
+        }
+        &__checkout{
+            height: 8%;
+        }
     }
 }

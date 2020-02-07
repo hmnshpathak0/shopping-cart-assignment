@@ -66,7 +66,7 @@ class MyCart extends React.Component{
                     <span>{'('+this.state.cart.length+' item)'}</span>
                     {
                         this.state.isModalOpen && (
-                        <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
+                        <button className='cart__close cart__close--full' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
                         )
                     }
 

@@ -20,11 +20,8 @@
       z-index: $cart_modal_z;
       background:rgba(0,0,0,0.7);
   }
-  .border_bottom{
-    padding-bottom: 0.5em;
-    &--grey{
+  .border_bottom_grey{
       box-shadow: 0 24px 5px -24px $color-grey-3;
-    }
   }
   form {
     .eTopIC{

@@ -23,7 +23,7 @@ function Banner(props) {
 }
   return (
     (props.banner.length > 0) &&
-    <section className='home__banner' role='region' >
+    <section className='home__banner border_bottom_grey' role='region' >
     <AutoPlaySwipeableViews axis='x' index={currentItem}
     onChangeIndex={handleCount} enableMouseEvents
     aria-live='off'>

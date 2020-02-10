@@ -13,7 +13,7 @@ function ShowCategory(props){
         props.saveData(item);
     }
     return (
-        <figure className='cat__item border_bottom border_bottom--grey'  >
+        <figure className='cat__item border_bottom_grey'  >
             { ((props.index)%2==0)&&<img src={item.imageUrl?item.imageUrl:''} alt={item.description} className='cat__item__image' />}
              <div className='cat__item__description'>
              <span>{item.name}</span>

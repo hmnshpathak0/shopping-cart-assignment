@@ -40,7 +40,6 @@ class App extends Component {
   }
 
   changeScreen = () => {
-    console.log(this.state)
     this.setState({
       screenSize: window.matchMedia('(' + labelConfig.MinWidth + screenConfig.ScreenLaptop + ')').matches
           ? screenConfig.ScreenLaptop

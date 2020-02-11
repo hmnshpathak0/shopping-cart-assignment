@@ -2,8 +2,6 @@
 
 .header{
     display:flex;
-    flex-direction:row;
-    justify-content: space-between;
     box-shadow: 0 0 3.1vw 0 $color-grey-2;
     
     &__logo{
@@ -50,13 +48,8 @@
                flex:0.2;
                &__nav{
                 font-size:0.9rem;
+                display: flex;
                 justify-content: space-around;
-                &--show{
-                    display:flex;
-                }
-                &--hide{
-                    display:none;
-                }
                }
                
             }

@@ -44,6 +44,7 @@ const errorConfig = {
 const labelConfig = {
     SabkaBazaar : 'SabkaBazaar',
     home : 'Home Page',
+    MenuBar: 'Navigation Menu',
     Offer: 'Offers',
     Of: 'of',
     GoCart: 'Go to Cart',

@@ -35,10 +35,10 @@ class ProductItem extends React.Component{
                  <React.Fragment>
                  <figure className='product__item__info'>
                     <img alt={item.name} className='product__item__image' src={item.imageURL}/>
-                    <figcaption title={item.description} className='product__item__desc'>{item.description}</figcaption>
+                    <figcaption  className='product__item__desc'>{item.description}</figcaption>
                 </figure>
                 <div className='product__item__action'>
-            <CustomButton label={labelConfig.AddToCart} styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
+            <CustomButton  styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
                 </div>
                 </React.Fragment>
             )
@@ -48,7 +48,7 @@ class ProductItem extends React.Component{
                 <img alt={item.name} className='product__item__image' src={item.imageURL}/>
                 <div className='product__item__content'>
                 <figcaption className='product__item__desc' title={item.description}>{item.description}</figcaption>
-                <CustomButton label={labelConfig.AddToCart} styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>                </div>
+                <CustomButton  styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>                </div>
             </figure>
             </React.Fragment>
              

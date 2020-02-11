@@ -20,7 +20,7 @@ function ShowCategory(props){
              <figcaption>
                  <span>{item.description}</span>
             </figcaption>
-            <NavLink  onClick={chooseCategory} to={'/'+urlConfig.productcompUrl} className='cat__item__btn' aria-label={labelConfig.Explore+item.key}>
+            <NavLink  onClick={chooseCategory} to={'/'+urlConfig.productcompUrl} className='cat__item__btn' >
                 {labelConfig.Explore+item.key}
             </NavLink>
         </div>

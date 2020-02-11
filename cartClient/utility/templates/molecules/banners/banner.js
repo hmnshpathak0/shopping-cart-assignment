@@ -37,8 +37,8 @@ function Banner(props) {
     ))}
   </AutoPlaySwipeableViews>
   <div className='home__banner__action'>
-    <CustomButton control='bannerSlide' label={labelConfig.Prev} handler={handlePrev} styleClass='home__banner__btn' text={labelConfig.Prev}/>
-    <CustomButton control='bannerSlide' label={labelConfig.Next} handler={handleNext} styleClass='home__banner__btn' text={labelConfig.Next}/>
+    <CustomButton control='bannerSlide'  handler={handlePrev} styleClass='home__banner__btn' text={labelConfig.Prev}/>
+    <CustomButton control='bannerSlide'  handler={handleNext} styleClass='home__banner__btn' text={labelConfig.Next}/>
   </div>
   <Slider activeSlider={currentItem} total={props.banner.length} slide={handleCount}/>
   </section>

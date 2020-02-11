@@ -71,9 +71,9 @@ class Header extends React.Component{
         <nav role="navigation" className='header__leftpan'>
             <img className='header__logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
      sizes="(max-width: 600px) 480px,
-            800px"   src={urlConfig.logoImageUrlSmall} alt='sabka Bazaar'/>
-        <CustomButton styleClass='header__iconBtn' handler={this.toggleMenu} label='Menu Bar' control='header__dropdown' > 
-            <i title='Menu bar'  role="navigation"  aria-hidden="true" className='fa fa-bars header__icon fa-2x'></i>
+            800px"   src={urlConfig.logoImageUrlSmall} alt={labelConfig.SabkaBazaar}/>
+        <CustomButton styleClass='header__iconBtn' handler={this.toggleMenu} label={labelConfig.MenuBar} control='header__dropdown' > 
+            <i title={labelConfig.MenuBar}  role="navigation"  aria-hidden="true" className='fa fa-bars header__icon fa-2x'></i>
         </CustomButton>
         <div className='header__nav'>
             {links.slice(0,2).map((nav,index) =>{
@@ -84,12 +84,13 @@ class Header extends React.Component{
         <DropDown loginStatus={this.state.loginStatus} height={this.state.height} toggle={this.state.toggle}/>
         </nav>
         <div className='header__rightpan'>
-        <div className={'header__rightpan__nav' +((this.state.loginStatus)?' header__rightpan__nav--hide':' header__rightpan__nav--show')} role='navigation'>
+       { !this.state.loginStatus && (<div className='header__rightpan__nav' role='navigation'>
         {links.slice(2,4).map((nav,index) =>{
                return  <NavLink aria-label={nav.name} key={index}   to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
-        </div>
+        </div>)
+    }
             <CartButton screenSize={this.state.screenSize}  total={this.state.cartLength} style='header__cartButton '/>
         </div>
         </div>

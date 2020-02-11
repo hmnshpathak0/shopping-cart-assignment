@@ -2,13 +2,13 @@
 @import '../../utility//theme/style/theme.scss'; 
 .login{
     display:flex;
-    margin:2em 3em;
+    margin:2rem 3rem;
     justify-content: space-evenly;
     text-align: left;
     &__desc{
-        padding-top: 3em;
+        padding-top: 3rem;
         span{
-            font-size:1em;
+            font-size:1rem;
         }
     }
     &__form{

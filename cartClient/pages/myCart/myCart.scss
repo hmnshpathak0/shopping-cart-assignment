@@ -51,7 +51,7 @@
         background: $color-pink-2;
         color:$color-white-1;
         padding: 0.5rem;
-        margin: 1rem auto;
+        margin: 0.5rem auto;
         &--empty{
             width: 80%;     
      
@@ -72,7 +72,7 @@
         position:absolute;
         bottom: 0;
         height: 80vh;
-        right: 10vw;
+        right: 10rem;
         padding-top:0;
         width:40%;
         &__items{
@@ -98,8 +98,6 @@
         &__items{
             max-height: 60vh;
         }
-        &__checkout{
-            height: 8%;
-        }
+ 
     }
 }

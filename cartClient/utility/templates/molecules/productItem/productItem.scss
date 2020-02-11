@@ -33,7 +33,6 @@
     &__btn{
             background: $color-pink-2;
             color:$color-white-1;
-            padding: 0.4rem;
     }
     &__title{
         font-size:1rem;
@@ -65,19 +64,17 @@
     }
 
     @media only screen and (min-width:$screen-laptop){
-        max-height: 40vw;
         &__title{
             font-size:1rem;
-            min-height:5vw;
+            min-height:3rem;
         }
         
     }
     @media only screen and (min-width:$screen-desktop){
         width:25%;
-        max-height:35vw;
         &__desc{
-           height:8vw;
-           margin-top: 0.4em;
+           height:10rem;
+           margin-top: 0.4rem;
         
         }
         &:nth-of-type(4n){
@@ -90,7 +87,7 @@
             flex-direction: column;
         }
         &__title{
-            min-height:8vw;
+            min-height:5rem;
         }
         
     }

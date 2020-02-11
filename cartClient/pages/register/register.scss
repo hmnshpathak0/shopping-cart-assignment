@@ -6,12 +6,12 @@
     justify-content: space-evenly;
     text-align: left;
     &__desc{
-        padding-top: 3em;
+        padding-top: 3rem;
         span{
-            font-size:1em;
+            font-size:1rem;
         }
     }
-    &_form{
+    &__form{
         width:40%;
      
     }

@@ -16,6 +16,7 @@ class MyCart extends React.Component{
             total:0,
             isModalOpen:false,
         }
+        this.closeRef = React.createRef();
     }
     
     redirectHome= () => {
@@ -44,6 +45,8 @@ class MyCart extends React.Component{
     componentDidMount(){
    
             this.props.closeModal(true);
+            if(this.closeRef.current)
+                this.closeRef.current.focus();
     }
 
     componentDidUpdate(){
@@ -52,6 +55,8 @@ class MyCart extends React.Component{
 }
     componentWillUnmount(){
         this.props.closeModal(false);
+        console.log(this.closeRef)
+
     }
     render(){
   
@@ -66,7 +71,7 @@ class MyCart extends React.Component{
                     <span>{'('+this.state.cart.length+' item)'}</span>
                     {
                         this.state.isModalOpen && (
-                        <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
+                        <button ref={this.closeRef} className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
                         )
                     }
 
@@ -92,7 +97,7 @@ class MyCart extends React.Component{
                     <h3>{labelConfig.MyCart} </h3>
                     {
                         this.state.isModalOpen && (
-                        <button className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
+                        <button ref={this.closeRef} className='cart__close' aria-label={labelConfig.CloseCartButton} aria-controls={labelConfig.CloseCart} onClick={this.closeCart}><i aria-hidden='true' className='fa fa-times'/></button>
                         )
                     }
                 </div>

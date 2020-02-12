@@ -33,6 +33,8 @@
     &__btn{
             background: $color-pink-2;
             color:$color-white-1;
+            font-size: 0.9rem;
+            padding: 0.3rem;
     }
     &__title{
         font-size:1rem;
@@ -49,6 +51,8 @@
         width:50%;
         &__btn{
             width: 100%;
+            font-size: 1rem;
+            padding: 0.3rem;
         }
         &__desc{
            height:13rem;

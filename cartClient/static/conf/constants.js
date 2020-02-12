@@ -82,7 +82,7 @@ const labelConfig = {
     CartEmptyButtonText: 'Start Shopping',
     CloseCart: 'CloseCart',
     CloseCartButton: 'Close Cart Button',
-    FooterMsg: 'CopyRight@ 2011-2018 Sabka Bazaar Groceries Supply Private Limited '
+    FooterMsg: 'CopyRight@ 2011-2018 Sabka Bazaar'
 }
 
 export {

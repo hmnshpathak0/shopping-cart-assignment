@@ -95,9 +95,6 @@
     }
     @media only screen and (min-height:$itab-height){
         height: 70vh;
-        &__items{
-            max-height: 60vh;
-        }
  
     }
 }

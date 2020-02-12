@@ -20,7 +20,7 @@ function  CustomForm(props){
                     })
                    
                 }
-                <input  type='submit' value={props.submit}/>
+                <button >{props.submit}</button>
                 </WrappedForm>
        
     )

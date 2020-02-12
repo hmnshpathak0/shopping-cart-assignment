@@ -41,7 +41,7 @@ class ProductDetails extends React.Component{
         if(props.cart.length){
             update.cart = props.cart;
         }
-
+        console.log("hi",props.category,state.category)
         if(Object.keys(props.category).length){
             if(Object.keys(state.category).length && props.category.id == state.category.id){
                 update.catproducts = props.products;
@@ -50,7 +50,6 @@ class ProductDetails extends React.Component{
             update.category = props.category;
             update.catproducts = props.products.filter(item => item.category==props.category.id);
         }else{
-            update.category= props.category;
             update.catproducts = props.products;
         }
 

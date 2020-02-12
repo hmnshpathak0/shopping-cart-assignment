@@ -39,8 +39,8 @@
       border:none;
       border-bottom:2px solid $color-error;
      }
-    input[type='submit']{
-       width:69%;
+    button{
+      width:69%;
       margin-top:1.2rem;
       color:$color-white-1;
       background: $color-pink-2; 
@@ -56,9 +56,6 @@
         border-color: $color-blue-1;
       }
     }
-  }
-  @media only screen and (max-width:$screen-tablet) {
-    font-size:0.7rem;
   }
   @media only screen and (min-width:$screen-desktop) {
     padding: 0 5rem;

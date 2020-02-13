@@ -41,14 +41,10 @@ class ProductDetails extends React.Component{
         if(props.cart.length){
             update.cart = props.cart;
         }
-        console.log("hi",props.category,state.category)
+
+        update.category = props.category;
         if(Object.keys(props.category).length){
-            if(Object.keys(state.category).length && props.category.id == state.category.id){
-                update.catproducts = props.products;
-                return Object.keys(update).length?update:null;
-            }
-            update.category = props.category;
-            update.catproducts = props.products.filter(item => item.category==props.category.id);
+            update.catproducts = props.products.filter(item => item.category==props.category.id); 
         }else{
             update.catproducts = props.products;
         }
@@ -96,7 +92,7 @@ class ProductDetails extends React.Component{
         return(
             <main className='category'>
                 <aside className='category__menu'>
-                    <SideNav cat={this.props.category} sameCat={this.state.sameCat} handler={this.toggleCatFlag} categories={this.state.categories} />
+                    <SideNav cat={this.state.category} sameCat={this.state.sameCat} handler={this.toggleCatFlag} categories={this.state.categories} />
                 </aside>
                 <div className='category__dropdown'> 
                 <CatMenu category={this.state.category} categories={this.state.categories}/>

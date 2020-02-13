@@ -93,7 +93,7 @@ class MyCart extends React.Component{
           </React.Fragment>
             ):(
             <React.Fragment>
-                <div className='cart__desc cart__desc--empty'>
+                <div className='cart__desc'>
                     <h3>{labelConfig.MyCart} </h3>
                     {
                         this.state.isModalOpen && (

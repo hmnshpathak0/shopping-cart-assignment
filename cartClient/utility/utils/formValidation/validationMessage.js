@@ -13,7 +13,7 @@ export default {
         missing: 'Please provide the required Field',
       },
       password: {
-        invalid: 'The password you entered is invalid',
+        invalid: 'The password must have ',
         missing: 'Please provide the required Field',
         rule: {
           capitalLetter: 'Include at least one capital letter',

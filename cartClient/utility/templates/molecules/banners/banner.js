@@ -28,8 +28,7 @@ function Banner(props) {
     onChangeIndex={handleCount} enableMouseEvents
     aria-live='off'>
     {props.banner.map((item, index) => (
-      <div className="home__banner__item" key={item.id} role='group'
-        aria-label={(index + 1)} >
+      <div className="home__banner__item" key={item.id} >
           <figure>
             <img className='home__banner__image' src={item.bannerImageUrl} alt={item.bannerImageAlt} />
           </figure>

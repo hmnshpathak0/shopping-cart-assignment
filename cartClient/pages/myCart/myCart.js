@@ -28,6 +28,13 @@ class MyCart extends React.Component{
         this.props.closeModal(false);
     }
 
+    changeFocus = () => {
+        if(this.closeRef){
+         window.setTimeout(() => { this.closeRef.current.focus(); },0);
+
+        }
+    }
+
     static getDerivedStateFromProps(props,state){
         let update = {};
         update.total= 0 ;
@@ -41,10 +48,17 @@ class MyCart extends React.Component{
         })
         return Object.keys(update).length? update:null
     }
-
+    changeFocus = (e) => {
+        if(e.keyCode == 9 && e.target.classList.value.indexOf('cart__btn') > -1){
+            e.preventDefault();
+            if(this.closeRef.current)
+                this.closeRef.current.focus();
+        }
+    }
     componentDidMount(){
    
             this.props.closeModal(true);
+            window.addEventListener('keydown', (e) => this.changeFocus(e) );
             if(this.closeRef.current)
                 this.closeRef.current.focus();
     }
@@ -55,13 +69,12 @@ class MyCart extends React.Component{
 }
     componentWillUnmount(){
         this.props.closeModal(false);
-        console.log(this.closeRef)
 
     }
     render(){
   
         return(
-            <main className='cart'>
+            <main className='cart' >
                 {
                 this.state.cart.length?(
                     <React.Fragment>
@@ -105,7 +118,7 @@ class MyCart extends React.Component{
                 <h5>{labelConfig.CartEmptyMessage}</h5>
                 <span>{labelConfig.CartEmptyPromo}</span>
                 </div>
-                <CustomButton handler={this.redirectHome} styleClass='cart__btn cart__btn--empty' label={labelConfig.CartEmptyButtonText} control={labelConfig.CartEmptyButtonText}  text={labelConfig.CartEmptyButtonText}/>
+                <CustomButton onfocusout={this.changeFocus} handler={this.redirectHome} styleClass='cart__btn cart__btn--empty' label={labelConfig.CartEmptyButtonText} control={labelConfig.CartEmptyButtonText}  text={labelConfig.CartEmptyButtonText}/>
             </React.Fragment>)
                 }
         </main>

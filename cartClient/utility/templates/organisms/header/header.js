@@ -77,7 +77,7 @@ class Header extends React.Component{
         </CustomButton>
         <div className='header__nav'>
             {links.slice(0,2).map((nav,index) =>{
-               return  <NavLink  activeClassName='header__nav__item--active' aria-label={nav.name} key={index}  className='header__nav__item' to={'/'+nav.url}>{nav.name}</NavLink>
+               return  <NavLink  activeClassName='header__nav__item--active'  key={index}  className='header__nav__item' to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>
@@ -86,7 +86,7 @@ class Header extends React.Component{
         <div className='header__rightpan'>
        { !this.state.loginStatus && (<div className='header__rightpan__nav' role='navigation'>
         {links.slice(2,4).map((nav,index) =>{
-               return  <NavLink aria-label={nav.name} key={index}   to={'/'+nav.url}>{nav.name}</NavLink>
+               return  <NavLink  key={index}   to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>)

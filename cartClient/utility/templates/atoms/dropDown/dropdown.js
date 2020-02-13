@@ -16,7 +16,7 @@ function DropDown(props) {
    
    
    navItems.map((nav,index) =>{
-               return  <NavLink  aria-label={nav.name} key={index}  to={'/'+nav.url}>{nav.name}</NavLink>
+               return  <NavLink   key={index}  to={'/'+nav.url}>{nav.name}</NavLink>
             })
         }
         </div>

@@ -7,9 +7,15 @@ function CustomButton(props){
         props.val? props.handler(props.val):props.handler();
     }
 
+    const changeFocus = () => {
+        if(props.onfocusout){
+            props.onfocusout();
+        }
+    }
+
     if(props.label){
     return (
-        <button aria-label={props.label} onClick={handleClick}  className={props.styleClass||''}>
+        <button  aria-label={props.label} onClick={handleClick}  className={props.styleClass||''}>
         {
             !props.rightText?(props.children?props.children:(props.text||'')):(
                 <React.Fragment>

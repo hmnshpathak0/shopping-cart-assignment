@@ -7,6 +7,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    outline: 0;
     justify-content: space-between;
     &__close{
         display: none;

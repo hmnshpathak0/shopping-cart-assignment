@@ -52,7 +52,6 @@ class App extends Component {
 
   render() {
     const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
-    console.log(this.state.screenSize,this.state.cartOpen)
     return (
       <BrowserRouter>
        <div  className={'app '+ (isCartOpen?'app--light':'')}>

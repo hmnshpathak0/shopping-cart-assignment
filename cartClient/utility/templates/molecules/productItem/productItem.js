@@ -29,14 +29,14 @@ class ProductItem extends React.Component{
     return(
        
         <React.Fragment >
-            <div className='product__item'>
-            <h5 className='product__item__title'>{item.name}</h5>
+            <figure className='product__item'>
+            <figcaption><h5 className='product__item__title'>{item.name}</h5></figcaption>
              {(!this.state.screenSize) ? (
                  <React.Fragment>
-                 <figure className='product__item__info'>
+                 <div className='product__item__info'>
                     <img alt={item.name} className='product__item__image' src={item.imageURL}/>
                     <figcaption  className='product__item__desc'>{item.description}</figcaption>
-                </figure>
+                </div>
                 <div className='product__item__action'>
             <CustomButton  styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>
                 </div>
@@ -44,18 +44,18 @@ class ProductItem extends React.Component{
             )
              : (
                  <React.Fragment>
-            <figure className='product__item__info'>
+            <div className='product__item__info'>
                 <img alt={item.name} className='product__item__image' src={item.imageURL}/>
                 <div className='product__item__content'>
                 <figcaption className='product__item__desc' title={item.description}>{item.description}</figcaption>
                 <CustomButton  styleClass='product__item__btn' control={labelConfig.MyCart} text={labelConfig.Buy + item.price} handler={this.addCartItem}/>                </div>
-            </figure>
+            </div>
             </React.Fragment>
              
              )
             
 }
-</div>
+</figure>
             </React.Fragment>
     )
 }

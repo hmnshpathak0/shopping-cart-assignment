@@ -67,8 +67,8 @@ class Header extends React.Component{
     render(){
         
         return(
-        <div ref={this.headerElement} className='header'>
-        <nav role="navigation" className='header__leftpan'>
+        <header ref={this.headerElement} className='header'>
+        <nav  className='header__leftpan'>
             <img className='header__logo' src={urlConfig.logoImageUrlSmall} title='sabka Bazaar'  srcSet={urlConfig.logoImageUrlLarge+' 2x'}
      sizes="(max-width: 600px) 480px,
             800px"   src={urlConfig.logoImageUrlSmall} alt={labelConfig.SabkaBazaar}/>
@@ -93,7 +93,7 @@ class Header extends React.Component{
     }
             <CartButton screenSize={this.state.screenSize}  total={this.state.cartLength} style='header__cartButton '/>
         </div>
-        </div>
+        </header>
         )
     }
 }

@@ -28,10 +28,7 @@ class Header extends React.Component{
         if(props.loginStatus != state.loginStatus){
             updateData.loginStatus= props.loginStatus
         }
-
-        if(props.cart.length && (props.cart.length!=state.cartLength)){
-            updateData.cartLength = props.cart.length;
-        }
+        updateData.cartLength = props.cart.length;
         if(props.screenSize != state.screenSize){
             updateData.screenSize = props.screenSize;
         }

@@ -28,12 +28,7 @@ class MyCart extends React.Component{
         this.props.closeModal(false);
     }
 
-    changeFocus = () => {
-        if(this.closeRef){
-         window.setTimeout(() => { this.closeRef.current.focus(); },0);
-
-        }
-    }
+ 
 
     static getDerivedStateFromProps(props,state){
         let update = {};
@@ -49,7 +44,7 @@ class MyCart extends React.Component{
         return Object.keys(update).length? update:null
     }
     changeFocus = (e) => {
-        if(e.keyCode == 9 && e.target.classList.value.indexOf('cart__btn') > -1){
+        if(this.state.isModalOpen && e.keyCode == 9 && e.target.classList.value.indexOf('cart__btn') > -1){
             e.preventDefault();
             if(this.closeRef.current)
                 this.closeRef.current.focus();

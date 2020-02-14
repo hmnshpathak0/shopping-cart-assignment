@@ -46,9 +46,9 @@ class App extends Component {
           : (window.matchMedia('(' + labelConfig.MinWidth + screenConfig.ScreenTablet + ')').matches
             ? screenConfig.ScreenTablet : screenConfig.ScreenMobile)
     })
+   
   }
-
-
+  
 
   render() {
     const isCartOpen = this.state.screenSize==screenConfig.ScreenLaptop && this.state.cartOpen ;
@@ -90,4 +90,7 @@ const mapStateToProps= state =>  {
   }
 }
 
+
+
 export default connect(mapStateToProps,null)(App);
+s

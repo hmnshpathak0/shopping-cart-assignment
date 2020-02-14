@@ -14,6 +14,9 @@ function CatMenu(props){
         let cat = categories.find(item => item.name == selectElememt.current.value)
         if(cat)
             props.saveCategory(cat)
+        else{
+            props.saveCategory({})
+        }
     }
     return(
        <React.Fragment>

@@ -23,7 +23,7 @@ const urlConfig = {
 const screenConfig= {
     ScreenTablet:'465px', /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     ScreenMobile: '300px',
-    ScreenLaptop:'900px',
+    ScreenLaptop:'769px',
     ScreenDesktop:'1025px', /* big landscape tablets, laptops, and desktops */
 }
 
@@ -56,7 +56,7 @@ const labelConfig = {
     Buy: 'Buy now @',
     MyCart: 'My Cart',
     AddToCart: 'Add to Cart',
-    SelectCategory: 'Select a Category',
+    SelectCategory: 'All Products',
     Login: 'Login',
     LoginMessage: 'Get Access to Orders,Whishlist and Recommendation',
     SignIn: 'SignUp',

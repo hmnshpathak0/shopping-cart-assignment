@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './header.scss';
-import  {NavLink} from 'react-router-dom'
+import  {withRouter, NavLink} from 'react-router-dom'
 import CartButton from '../../atoms/buttons/cartButton/cartButton'
 import DropDown from '../../atoms/dropDown/dropdown';
 import links from './links.json';
-import {screenConfig, urlConfig, labelConfig} from '../../../../static/conf/constants';
+import {screenConfig,urlConfig, labelConfig} from '../../../../static/conf/constants';
 import {connect} from 'react-redux';
 import nativeClick from '../../molecules/nativeClick/nativeClick';
 import CustomButton from '../../atoms/buttons/customButton/customButton';
+import {CART_OPEN_STATUS} from '../../../Actions/cartAction/types'
+
 
 class Header extends React.Component{
     constructor(){
@@ -49,6 +51,12 @@ class Header extends React.Component{
         this.props.handleResize();
         if(this.state.toggle && this.state.height!=this.headerElement.current.clientHeight){
             this.setState({height:this.headerElement.current.clientHeight})
+        }
+    }
+    componentDidUpdate(){
+        if(this.props.screenSize==screenConfig.ScreenLaptop && this.props.history.location.pathname.indexOf(urlConfig.cartcompUrl) > -1){
+            this.props.closeModal(false)
+            this.props.history.push('/'+urlConfig.homecompUrl);
         }
     }
     //Calling the componentDidMount life cycle
@@ -100,4 +108,13 @@ const mapStatetoProps = state => {
         cart:state.updateData.cart,
     }
 }
-export default connect(mapStatetoProps,null)(nativeClick(Header,['header__icon']));
+const mapDispatcherToProps = dispatch => {
+    return {
+      closeModal: flag =>
+        dispatch({
+          type: CART_OPEN_STATUS,
+          payload: flag
+        })
+    };
+  };
+export default withRouter(connect(mapStatetoProps,mapDispatcherToProps)(nativeClick(Header,['header__icon'])));

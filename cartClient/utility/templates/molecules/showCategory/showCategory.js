@@ -16,8 +16,8 @@ function ShowCategory(props){
         <figure className='cat__item border_bottom_grey'  >
             { ((props.index)%2==0)&&<img src={item.imageUrl?item.imageUrl:''} alt={item.description} className='cat__item__image' />}
              <div className='cat__item__description'>
-             <figcaption>{item.name}</figcaption>
-             <span>{item.description}</span>
+             <figcaption><h4>{item.name}</h4></figcaption>
+             <p>{item.description}</p>
             <NavLink  onClick={chooseCategory} to={'/'+urlConfig.productcompUrl} className='cat__item__btn' >
                 {labelConfig.Explore+item.key}
             </NavLink>

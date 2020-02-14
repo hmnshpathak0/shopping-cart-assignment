@@ -93,4 +93,3 @@ const mapStateToProps= state =>  {
 
 
 export default connect(mapStateToProps,null)(App);
-s

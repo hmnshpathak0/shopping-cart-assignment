@@ -84,6 +84,12 @@
         &:nth-of-type(4n){
             background: none;
         }
+        &:nth-of-type(2n){
+            background-image: linear-gradient(45deg, $color-black-4, $color-grey-7);
+            background-repeat: no-repeat;
+            background-size: 2px 75%, calc(100% - 1px) 100%;
+            background-position: right top,1px 0;
+        }
         &__image{
             width:100%;
         }

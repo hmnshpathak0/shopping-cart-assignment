@@ -55,7 +55,7 @@ class Header extends React.Component{
     }
     componentDidUpdate(){
         if(this.props.screenSize==screenConfig.ScreenLaptop && this.props.history.location.pathname.indexOf(urlConfig.cartcompUrl) > -1){
-            this.props.closeModal(false)
+            this.props.closeModal(false);
             this.props.history.push('/'+urlConfig.homecompUrl);
         }
     }

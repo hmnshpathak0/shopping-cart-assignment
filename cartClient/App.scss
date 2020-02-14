@@ -18,7 +18,7 @@
       overflow: hidden;
       top: 0;
       z-index: $cart_modal_z;
-      background:rgba(0,0,0,0.7);
+      background:$color-black-5;
   }
   .border_bottom_grey{
       box-shadow: 0 24px 5px -24px $color-grey-3;
